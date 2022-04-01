@@ -42,3 +42,44 @@ body{
     margin:auto 10px auto 10px;
     font-size: 25px;
 }
+/******         HOME BANNER     ******/
+h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+.home_banner{
+    background-image: url("../src/img/home_banner.jpg");
+    height: 600px;
+    background-position: bottom;
+    background-size: cover;
+}
+.home_banner>div{
+    width: 50%;
+    padding-top: 5%;
+}
+.home_banner p,
+.home_banner h1{
+    padding-left: 20px;
+    text-align: center;
+}
+.home_banner p:nth-child(2){
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #ECDEC4;
+}
+.home_banner p:nth-child(3),
+h1{
+    color: #fff;
+}
+.button{
+    text-align: center;
+}
+.button a{
+    display:inline-block;
+    background-color:#fff;
+    border: 1px solid #ECDEC4;
+    color:#594A47;
+    border-radius:15px 5px;
+    padding:0.5em;
+    text-decoration:none;
+}
