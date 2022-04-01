@@ -35,8 +35,10 @@ body{
     justify-content: flex-end;
     align-items: center;
 }
-.footer div i,
+.footer div a,
 .footer div p{
+    text-decoration: none;
+    color: #594A47;
     margin:auto 10px auto 10px;
     font-size: 25px;
 }
