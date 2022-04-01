@@ -1,0 +1,42 @@
+/******         BODY        ******/
+body{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #594A47;
+}
+/******         HEADER      ******/
+.navbar, .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .navbar li{
+    list-style-type: none;
+ }
+ .navbar a,
+ .bi-basket{
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #594A47;
+    text-decoration: none;
+    margin:auto 20px auto 20px;
+ }
+ .navbar li:not(:last-child):hover{
+     border: 2px solid #594A47;
+     border-radius: 15px 5px;
+ }
+/******         FOOTER      ******/
+
+.footer div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.footer div i,
+.footer div p{
+    margin:auto 10px auto 10px;
+    font-size: 25px;
+}
