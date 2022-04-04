@@ -81,5 +81,34 @@ h1{
     color:#594A47;
     border-radius:15px 5px;
     padding:0.5em;
+    margin-top: 1em;
     text-decoration:none;
+}
+/******         HOME ARTICLE     ******/
+.article{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 10em auto 10em auto;
+}
+h2{
+    margin-bottom: 2em;
+}
+.article div:nth-child(1){
+    width: 50%;
+}
+.patisserie{
+    flex-direction: row-reverse;
+}
+.right{
+    text-align: end;
+}
+.left{
+    text-align: start;
+}
+.article .img_right{
+    box-shadow: 12px -12px 1px 1px 	#ECDEC9;
+}
+.article .img_left{
+    box-shadow: -12px 12px 1px 1px #ECDEC9;
 }
