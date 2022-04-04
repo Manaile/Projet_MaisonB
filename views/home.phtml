@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Maison B, retrouver au sein de notre boulangerie/patisserie artisanale dans le 19eme arrondissement de Paris du bon pain, des pâtisseries savoureuses et des cours pour patisser comme un chef!">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Maison B - Boulangerie/Patisserie Artisanale</title>
-    <link rel="stylesheet" href="../src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
-</head>
-<body>
+
     
 
 <section class="home_banner">
@@ -31,7 +17,7 @@
             <p>Nos pains sont pétris, façonnés et cuits sur place après avoir développé leurs arômes et leurs qualités nutritionnelles sous l'effet d'une fermentation lente de 24 heures. Découvrez nos créations sans plus attendre.</p>
             <div class="button right"><a href="#">En savoir plus...</a></div>
         </div>
-        <div><img class="img_right" src="../src/img/pain/pain1.jpg" alt="photo de différents pains"></div>
+        <div><img class="img_right" src="./src/img/pain/pain1.jpg" alt="photo de différents pains"></div>
     </article>
     <article class="article pastry">
         <div>
@@ -39,7 +25,7 @@
             <p>Créations originales, grands classiques revisités, gâteaux de voyage ou pour vos événements, découvrez le catalogue de nos produits disponibles en boutique.</p>
             <div class="button left"><a href="#">En savoir plus...</a></div>
         </div>
-        <div><img class="img_left" src="../src/img/patisserie/patisserie1.jpg" alt="photo de différents patisserie"></div>
+        <div><img class="img_left" src="./src/img/patisserie/patisserie1.jpg" alt="photo de différents patisserie"></div>
     </article>
     <article class="article">
     <div>
@@ -47,16 +33,18 @@
             <p>Nos ateliers proposent des cours de pâtisserie dans nos locaux, avec des thématiques différentes chaque semaine. Accompagner de notre chef, la pâtisserie n'aura plus de secrets pour vous. Vous pouvez consulter le planning et reserver votre cour directement en ligne.</p>
             <div class="button right"><a href="#">En savoir plus...</a></div>
         </div>
-        <div><img class="img_right" src="../src/img/cours/cours1.jpg" alt="photo de différents patisserie"></div>
+        <div><img class="img_right" src="./src/img/cours/cours1.jpg" alt="photo de différents patisserie"></div>
     </article>
 </section>
 
 <section class="reviews">
     <div>
-        <!--<?php foreach($reviews as $review): ?>
-        <h3></h3>
-        <p></p>
-        <?php endforeach ?>-->
+        <?php foreach($reviews as $review): ?>
+        <div>
+        <h3><?= $review['name'] ?></h3>
+        <p><?= $review['description'] ?></p>
+        </div>
+        <?php endforeach ?>
     </div>
 </section>
 
@@ -64,5 +52,3 @@
     <p>Pour toutes demandes, plus de renseignements ou pour nous donnez votre avis, n'hesitez pas à nous envoyez un message.</p>
     <div class="button right"><a href="#">Nous contacter</a></div>
 </section>
-
-</body>

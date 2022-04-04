@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Maison B - Boulangerie/Patisserie Artisanale</title>
-    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
-        <a href="#"><img src="../src/img/logo.png" alt="logo de la boulangerie/pâtisserie" width='300px'></a>
+        <a href="#"><img src="./src/img/logo.png" alt="logo de la boulangerie/pâtisserie" width='300px'></a>
         <nav>
             <ul class="navbar">
                 <li><a href="">Boulangerie</a></li>
@@ -26,10 +27,10 @@
         </nav>
     </header>
     <main>
-
+        <?php include $template.'.phtml' ?>
     </main>
     <footer class="footer">
-        <img src="../src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie" width= "150px">
+        <img src="./src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie" width= "150px">
         <hr>
         <div>
             <p>Retrouvez nous sur: </p>
