@@ -85,7 +85,8 @@ h1{
     text-decoration:none;
 }
 /******         HOME ARTICLE     ******/
-.article{
+.article,
+.contact{
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -97,7 +98,7 @@ h2{
 .article div:nth-child(1){
     width: 50%;
 }
-.patisserie{
+.pastry{
     flex-direction: row-reverse;
 }
 .right{
@@ -111,4 +112,27 @@ h2{
 }
 .article .img_left{
     box-shadow: -12px 12px 1px 1px #ECDEC9;
+}
+.contact{
+    position: relative;
+    padding-top: 10em;
+}
+.contact p{
+    width: 50%;
+}
+.contact .button a{
+    z-index: 2;
+    position: absolute;
+    left: 1134px;
+}
+.contact .button::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    top: -107px;
+    left: 998px;
+    border-top: 350px solid transparent;
+    border-right: 706px solid #ECDEC9;
+    border-bottom: 350px solid transparent;
+    z-index: 1;
 }
