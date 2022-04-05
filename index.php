@@ -3,7 +3,7 @@
     require 'controller/Controller.php';
 
     $Controller= new Controller();
-    $review= $Controller->review();
+    $review= $Controller->reviews();
 
     include 'views/index.phtml';
 ?>

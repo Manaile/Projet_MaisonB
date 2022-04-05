@@ -12,7 +12,7 @@ class Controller{
         $this->Model = new Model();
     }
 
-    public function review(){
+    public function reviews(){
         return $this->Model->reviews;
     }
     

@@ -13,15 +13,14 @@ class Model extends Database{
     public function review(){
 
         $query=
-        '
-        SELECT (name,
+        'SELECT (name,
             description)
         FROM reviews
         ';
 
-        $gets= $this->pdo->prepare($query);
+        $gets=$this->pdo->prepare($query);
         $gets->execute();
-        $reviews= $gets->fetchAll(PDO::FETCH_ASSOC);
+        $reviews=$gets->fetchAll(PDO::FETCH_ASSOC);
         return $reviews;
     }
    
