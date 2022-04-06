@@ -1,9 +1,10 @@
 <?php
 
-    require 'controller/Controller.php';
+    require 'controller/HomeController.php';
 
-    $Controller= new Controller();
-    $review= $Controller->reviews();
+    $HomeCont = new HomeController();
+    $review = $HomeCont->showReviews();
+
 
     include 'views/index.phtml';
 ?>
