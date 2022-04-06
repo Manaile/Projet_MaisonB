@@ -136,6 +136,31 @@ h2{
     border-bottom: 350px solid transparent;
     z-index: 1;
 }
+.reviews div{
+    text-align: center;
+}
+.reviews div p{
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    font-style: italic;
+}
+.reviews div p::before{
+    content: '“';
+    font-size: 1.6em;
+}
+.reviews div p::after{
+    content: '”';
+    font-size: 1.5em;
+}
+.slick-next:before,
+.slick-prev:before{
+    font-size: 30px;
+    color: #ECDEC9;
+}
+.slick-slide{
+    height: auto;
+}
+
 /******         BAKERY BANNER     ******/
 .bakery_banner{
     display: flex;

@@ -1,7 +1,7 @@
 
 <section class="home_banner">
     <div>
-        <h1>Chez Maison B.</h1>
+        <h1>Chez Maison B. "</h1>
     <p>Un savoir-faire traditionnel et une gamme de produits 100% maison réalisés avec passion à partir de matière première de qualité.</p>
     <p><em>Pour en savoir plus et pour toute commande n'hesitez pas à vous rapprocher de nous !</em></p>
     <div class="button"><a href="#">Nous contacter</a></div>
@@ -35,12 +35,12 @@
     </article>
 </section>
 
-<section class="reviews">
-    <div>
+<section class="bloc_reviews">
+    <div class="reviews">
         <?php foreach($review as $rev): ?>
         <div>
-        <h3><?= $rev['name'] ?></h3>
-        <p><?= $rev['description'] ?></p>
+            <h3><?= $rev['name'] ?></h3>
+            <p><?= $rev['description'] ?></p>
         </div>
         <?php endforeach ?>
     </div>
