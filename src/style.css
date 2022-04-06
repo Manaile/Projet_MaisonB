@@ -77,7 +77,7 @@ h1{
 .button a{
     display:inline-block;
     background-color:#fff;
-    border: 1px solid #ECDEC4;
+    border: 2px solid #ECDEC4;
     color:#594A47;
     border-radius:15px 5px;
     padding:0.5em;
@@ -137,6 +137,23 @@ h2{
     z-index: 1;
 }
 /******         BAKERY BANNER     ******/
+.bakery_banner{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 10em auto 3em auto;
+}
+.bakery_banner .bloc{
+    width: 90%;
+}
+.bakery_banner img{
+    box-shadow: 12px -12px 1px 1px #ECDEC9;
+}
+.article2{
+    text-align: center;
+}
 h3{
+    font-size: 30px;
     font-family: 'Dancing Script', cursive;
+    margin-top: 5em;
 }
