@@ -7,7 +7,7 @@ require './model/HomeModel.php';
 
 class HomeController{
     private $HomeModel;
-    public $template;
+    //public $template;
 
     public function __construct(){
         $this->HomeModel = new HomeModel();
@@ -17,6 +17,8 @@ class HomeController{
         return $this->HomeModel->getReviews();
         $template = 'home';
     }
+    
+    include './views/index.phtml';
     
 }
 

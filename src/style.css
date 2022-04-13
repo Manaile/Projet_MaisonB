@@ -161,18 +161,15 @@ h2{
     height: auto;
 }
 
-/******         BAKERY BANNER     ******/
-.bakery_banner{
+/******     BAKERY BANNER   /   PASTRY BANNER   /   PASTRYCLASS     ******/
+.banner{
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin: 10em auto 3em auto;
 }
-.bakery_banner .bloc{
-    width: 90%;
-}
-.bakery_banner img{
-    box-shadow: 12px -12px 1px 1px #ECDEC9;
+.pastry_banner{
+    flex-direction: row-reverse;
 }
 .article2{
     text-align: center;
@@ -181,4 +178,17 @@ h3{
     font-size: 30px;
     font-family: 'Dancing Script', cursive;
     margin-top: 5em;
+}
+.bakery_banner .bloc,
+.pastry_banner .bloc,
+.pastryClass_banner .bloc{
+    width: 90%;
+}
+.bakery_banner img,
+.pastryClass_banner img{
+    box-shadow: 12px -12px 1px 1px #ECDEC9;
+}
+.pastry_banner img{
+    box-shadow: -12px -12px 1px 1px #ECDEC9;
+    margin-right: 5em;
 }
