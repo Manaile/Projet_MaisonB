@@ -192,3 +192,16 @@ h3{
     box-shadow: -12px -12px 1px 1px #ECDEC9;
     margin-right: 5em;
 }
+.cards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5em;
+}
+.card{
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+}
+.card .button{
+    margin-bottom: 1.5em;
+}

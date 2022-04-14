@@ -19,8 +19,8 @@ class Autoloader
         $host = $_SERVER['HTTP_HOST'];
 
 
-        define('HOST', 'http://' .$host.'/ProjetMVC_copie/');
-        define('ROUT', $root.'/ProjetMVC_copie/');
+        define('HOST', 'http://' .$host.'/Projet/');
+        define('ROUT', $root.'/Projet/');
 
         define('CONTROLLERS', ROUT.'Controllers/');
         define('VIEWS', ROUT.'views/');
