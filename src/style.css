@@ -161,12 +161,16 @@ h2{
     height: auto;
 }
 
-/******     BAKERY BANNER   /   PASTRY BANNER   /   PASTRYCLASS     ******/
+/******     BAKERY BANNER   /   PASTRY BANNER   /   PASTRYCLASS    /  CONTACT  ******/
 .banner{
     display: flex;
     justify-content: space-between;
     align-content: center;
+    text-align: center;
     margin: 10em auto 3em auto;
+}
+.banner{
+    justify-content: center;
 }
 .pastry_banner{
     flex-direction: row-reverse;
@@ -179,13 +183,10 @@ h3{
     font-family: 'Dancing Script', cursive;
     margin-top: 5em;
 }
-.bakery_banner .bloc,
-.pastry_banner .bloc,
-.pastryClass_banner .bloc{
+.banner .bloc{
     width: 90%;
 }
-.bakery_banner img,
-.pastryClass_banner img{
+.banner img{
     box-shadow: 12px -12px 1px 1px #ECDEC9;
 }
 .pastry_banner img{
@@ -204,4 +205,75 @@ h3{
 }
 .card .button{
     margin-bottom: 1.5em;
+}
+.gallery{
+    margin-top: 5em;
+    text-align: center;
+}
+.gallery img {
+    width: 20%;
+}
+/****** CONTACTUS   *****/
+form div{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+.address,
+form{
+    width: 45%;
+    margin: auto;
+}
+form label{
+    font-family: 'Dancing Script', cursive;
+}
+form label{
+    font-size: 1.4em;
+    padding-bottom: 0.2em;
+}
+form input,
+form select{
+    font-size: 1em;
+}
+textarea{
+    min-height: 8em;
+}
+button{
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ECDEC9;
+    border: 1px solid #594A47;
+    color:#594A47;
+    border-radius:15px 5px;
+    padding:0.8em;
+    text-align: center;
+    font-weight: bold;
+}
+.contactUs {
+    width: 70%;
+    display: flex;
+    border: 1px solid black;
+    padding: 3em;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    position: relative;
+}
+
+.address a{
+    text-decoration: none;
+    color: #594A47;
+}
+iframe{
+    border: 0;
+    padding-top: 1em;
+    width: 400px;
+    height: 250px;
+}
+.address img{
+    position: absolute;
+    top: 36em;
+    left: 47em;
 }
