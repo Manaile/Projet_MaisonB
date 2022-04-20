@@ -33,7 +33,6 @@ body{
 .footer div{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 .footer div a,
 .footer div p{
@@ -42,6 +41,13 @@ body{
     margin:auto 10px auto 10px;
     font-size: 25px;
 }
+.footer div:last-child{
+    text-decoration: underline;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 /******         HOME BANNER     ******/
 h1{
     font-family: 'Dancing Script', cursive;
@@ -186,7 +192,7 @@ h3{
 .banner .bloc{
     width: 90%;
 }
-.banner img{
+.banner>img{
     box-shadow: 12px -12px 1px 1px #ECDEC9;
 }
 .pastry_banner img{
@@ -202,6 +208,9 @@ h3{
     border: 1px solid black;
     width: 30%;
     text-align: center;
+}
+.card img{
+    width: 100%;
 }
 .card .button{
     margin-bottom: 1.5em;
@@ -220,7 +229,8 @@ form div{
     padding: 1em;
 }
 .address,
-form{
+form,
+.recap{
     width: 45%;
     margin: auto;
 }
@@ -256,9 +266,7 @@ button{
     border: 1px solid black;
     padding: 3em;
     justify-content: space-evenly;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5em;
+    margin: 5em auto 5em auto;
     position: relative;
 }
 
@@ -276,4 +284,18 @@ iframe{
     position: absolute;
     top: 36em;
     left: 47em;
+}
+
+.recap>div:nth-child(1){
+    border: 1px solid black;
+    padding: 1em;
+    text-align: center;
+}
+.recap img{
+    position: absolute;
+    top: 26em;
+    left: 47em;
+}
+.legal h3{
+    text-align: center;
 }
