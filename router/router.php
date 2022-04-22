@@ -4,42 +4,70 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+include_once('../controller/HomeController.php');
+include_once('../controller/BakeryController.php');
+include_once('../controller/PastryController.php');
+include_once('../controller/PastryClassController.php');
+include_once('../controller/AboutUsController.php');
+include_once('../controller/ContactUsController.php');
+
+
+
 
    class Router{
-        private $request;
+        private $action;
 
-        private $routes = [
-                            'home'  => ['controller' => 'HomeController', 'method' => 'showReviews'],
-                            'bakery' => [],
-                            'pastry' => [],
-                            'pastryClass' => [],
-                            'aboutUs' =>[],
-                            'contact' =>[],
-        ];
-        public function __construct($request){
-            $this->request = $request;
-        }
         public function getControllers(){
+            if(isset($_GET['action'])){
+                $action = $_GET['action'];
 
-            $request = $this->request;
-            if(key_exists($request, $this->routes))
-        {
-            $controllers = $this->routes[$request]['controller'];
-            $method = $this->routes[$request]['method'];
+                switch($action){
 
-            // include(CONTROLLERS.$controllers.'php');
+                    case 'home':
+                        $HomeCont = new HomeController();
+                        return $HomeCont->showReviews();
+                        //var_dump($blop);
+                        break;
 
-            $currentController = new $controller();
-            $currentController->$method();
+                    case 'bakery':
+                        $BakeryCont = new BakeryController();
+                        return  $BakeryCont->showBakeryImg();
+                        //var_dump($blop2);
+                        break;
 
-        } else {
-            echo 'Erreur 404 Page introuvable';
+                    case 'pastry':
+                            $PastryCont = new PastryController();
+                            return $PastryCont->showPastryImg();
+                            //var_dump($blop2);
+                            break;
+                    
+                    case 'pastryClass':
+                        $PastryClassCont = new PastryCLassController();
+                        return $PastryClassCont->showPastryClassCard();
+                        //var_dump($blop2);
+                        break;
+
+                    case 'aboutUs':
+                        $aboutUsCont = new aboutUsController();
+                        return $aboutUsCont->showaboutUsImg();
+                        //var_dump($blop2);
+                        break;
+                    
+                    case 'contactUs':
+                        $contactUsCont = new contactUsController();
+                        return $contactUsCont->getContactUs();
+                        //var_dump($blop2);
+                        break;
+                        
+            }}
+            else {
+                //faire une page erreur 404 !!
+                echo 'Erreur 404 Page introuvable';
+            }
+           
         }
+        
+        
     }
-
-        }
-
-
-  
 
 ?>

@@ -3,24 +3,19 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-// require './controller/HomeController.php';
-
     define('ROOT',dirname(__DIR__));
-    //echo ROOT;
 
     require ROOT.'/router/Router.php';
-    require ROOT.'/Autoloader.php';
 
-    $request = $_GET["url"];
+    //instanciation de la class Router
+    $rout = new Router();
 
-    $router = new Router($request);
-    $Autoloader = new Autoloader();
+    //instanciation des methods de la class Router
+    $review = $rout->getControllers();
+    //var_dump($review);
 
-    $Autoloader->start();
-    $router->getControllers();
 
+    //inclure l'index.phtml
     include ROOT.'/views/index.phtml';
 
-    // $home = new HomeController();
-    //get pour url $request
 ?>

@@ -23,14 +23,14 @@
 
 <body>
     <header class="header">
-        <a href="#"><img src="../src/img/logo.png" alt="logo de la boulangerie/pâtisserie" width='300px'></a>
+        <a href="?action=home"><img src="../src/img/logo.png" alt="logo de la boulangerie/pâtisserie" width='300px'></a>
         <nav>
             <ul class="navbar">
-                <li><a href="index.php?url=bakery">Boulangerie</a></li>
-                <li><a href="index.php?url=pastry">Pâtisserie</a></li>
-                <li><a href="index.php?url=pastryClass">Nos ateliers</a></li>
-                <li><a href="index.php?url=aboutUs">Qui sommes nous?</a></li>
-                <li><a href="index.php?url=contact">Contact</a></li>
+                <li><a href="?action=bakery">Boulangerie</a></li>
+                <li><a href="?action=pastry">Pâtisserie</a></li>
+                <li><a href="?action=pastryClass">Nos ateliers</a></li>
+                <li><a href="?action=aboutUs">Qui sommes nous?</a></li>
+                <li><a href="?action=contactUs">Contact</a></li>
                 <li><a href=""><i class="bi bi-basket"></i></a></li>
             </ul>   
         </nav>
@@ -39,7 +39,7 @@
         <?php include $template.'.phtml' ?>
     </main>
     <footer class="footer">
-        <img src="../src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie" width= "150px">
+        <img src="../src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie"  class="min">
 
         <hr>
         <div>
@@ -49,8 +49,8 @@
             <a href="https://twitter.com/?lang=fr" target="_blank"><i class="bi bi-twitter"></i></a>
         </div>
         <div class="lastBloc">
-        <a href="index.php?url=legalDisclaimer">mentions légales</a>
-        <a href="index.php?url=admin"><i class="bi bi-lock-fill"></i></a>
+        <a href="?action=legalDisclaimer">mentions légales</a>
+        <a href="?action=admin"><i class="bi bi-lock-fill"></i></a>
         </div>
     </footer>
     <script src="../src/js/jquery.js"></script>

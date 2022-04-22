@@ -1,28 +1,27 @@
 <?php
-
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 require_once '../database/Database.php';
 
-class HomeModel extends Database{
+class BakeryModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getReviews(){
+    public function getBakeryImg(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
         (
-            'SELECT name,
-            description   
-            FROM reviews'
+            'SELECT url,
+            description 
+            FROM bakery_gallery'
         );
 
         $query->execute();
-        $reviews = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($reviews);
-        return $reviews;
+        $bakeryImg = $query->fetchAll(PDO::FETCH_ASSOC);
+        //var_dump($bakeryImg);
+        return $bakeryImg;
     }
    
 }

@@ -3,7 +3,7 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-require './model/HomeModel.php';
+require '../model/HomeModel.php';
 
 class HomeController{
     private $HomeModel;
@@ -14,13 +14,9 @@ class HomeController{
     }
 
     public function showReviews(){
-        return $this->HomeModel->getReviews();
-        $template = 'home';
+       $blop= $this->HomeModel->getReviews();
+        //var_dump($blop);
     }
-    
-    include './views/index.phtml';
-    
 }
-
-
+$template = 'home';
 ?>

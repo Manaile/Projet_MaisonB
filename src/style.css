@@ -254,6 +254,9 @@ h3{
     border: 3px solid #ebe3db;
     padding: 1em;
 }
+.min{
+    width: 150px;
+}
 /****** CONTACTUS / SHOPPINGCART  *****/
 form div{
     display: flex;
