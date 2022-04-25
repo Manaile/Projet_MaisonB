@@ -14,7 +14,7 @@ class HomeController{
     }
 
     public function showReviews(){
-       $blop= $this->HomeModel->getReviews();
+       return $this->HomeModel->getReviews();
         //var_dump($blop);
     }
 }

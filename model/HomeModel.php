@@ -15,7 +15,7 @@ class HomeModel extends Database{
         $query = $this->pdo->prepare
         (
             'SELECT name,
-            description   
+            message   
             FROM reviews'
         );
 

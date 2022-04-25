@@ -4,19 +4,19 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-include_once('../controller/HomeController.php');
-include_once('../controller/BakeryController.php');
-include_once('../controller/PastryController.php');
-include_once('../controller/PastryClassController.php');
-include_once('../controller/AboutUsController.php');
-include_once('../controller/ContactUsController.php');
 
-
-
+//include_once('../controller/HomeController.php');
+//include_once('../controller/BakeryController.php');
+//include_once('../controller/PastryController.php');
+//include_once('../controller/PastryClassController.php');
+//include_once('../controller/AboutUsController.php');
+//include_once('../controller/ContactUsController.php');
+//include_once('../controller/legalDisclaimerController.php');
+//include_once('../controller/error404Controller.php');
 
    class Router{
         private $action;
-
+    
         public function getControllers(){
             if(isset($_GET['action'])){
                 $action = $_GET['action'];
@@ -54,15 +54,21 @@ include_once('../controller/ContactUsController.php');
                         break;
                     
                     case 'contactUs':
-                        $contactUsCont = new contactUsController();
-                        return $contactUsCont->getContactUs();
+                        $ContactUsCont = new ContactUsController();
+                        return $ContactUsCont->getContactUs();
                         //var_dump($blop2);
+                        break;
+
+                    case 'legalDisclaimer':
+                        $legalDisclaimer = new legalDisclaimerController();
+                        return $legalDisclaimer->showLegalDisclaimer();
                         break;
                         
             }}
             else {
-                //faire une page erreur 404 !!
-                echo 'Erreur 404 Page introuvable';
+                //envoie vars la page d'erreur 404 !!
+                $error404 = new error404Controller();
+                return $error404->showError404Controller();
             }
            
         }

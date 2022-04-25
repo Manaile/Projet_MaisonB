@@ -18,4 +18,5 @@ class ContactUsController{
     }
 }
 $template = 'contactUs';
+
 ?>

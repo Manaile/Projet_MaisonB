@@ -11,17 +11,49 @@ class ContactUsModel extends Database{
     }
     public function sendContactUs(){
         //envoyer ce qu'on a besoin
-        $query = $this->pdo->prepare
-        (
-            'SELECT url,
-            description 
-            FROM pastry_gallery'
+        if(!empty($_POST) && $_POST['choice']=="2"){
+            $query = $this->pdo->prepare(
+            '
+                INSERT INTO
+                contact
+                (name, phone, mail, message)
+                VALUES
+                (?, ?, ?, ?)
+            '
         );
 
-        $query->execute();
-        $ContactUs = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($bakeryImg);
-        return $ContactUs;
+        $query ->execute(
+            [$_POST['name'], 
+            $_POST['phone'], 
+            $_POST['mail'], 
+            $_POST['message']]);
+        $send = $query->fetch(PDO::FETCH_ASSOC);
+        return $send;
+        //var_dump($send);
+    }
+    else if(!empty($_POST) && $_POST['choice']=="1"){
+        $query = $this->pdo->prepare(
+            '
+                INSERT INTO
+                reviews
+                (name, phone, mail, message)
+                VALUES
+                (?, ?, ?, ?)
+            '
+        );
+
+        $query ->execute(
+            [$_POST['name'], 
+            $_POST['phone'], 
+            $_POST['mail'], 
+            $_POST['message']]);
+        $send = $query->fetch(PDO::FETCH_ASSOC);
+        return $send;
+    }
+    else{
+        //choisir un objet
+        echo "choisir un objet";
+    }
     }
    
 }

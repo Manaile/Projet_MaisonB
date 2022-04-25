@@ -17,19 +17,19 @@
     </div>
 </section>
 <section class="cards">
-    <!-- <?php //foreach($ as $): ?> -->
+    <?php foreach($items as $item): ?>
     <div class="card">
         <div>
-            <img src="" alt="">
+            <img src="<?= $item['url'] ?>" alt="<?= $item['description'] ?>">
         </div>
-        <p><strong> Nom de l'atelier</strong></p>
-        <p>date de l'atelier</p>
-        <p>prix de l'atelier</p>
-        <div class="button"><a href="#">Reserver</a></div>
+        <p><strong><?= $item['name'] ?></strong></p>
+        <p><?= $item['date'] ?></p>
+        <p><?= $item['price'] ?> €</p>
+        <div class="button"><a href="?action=shoppingCart">Reserver</a></div>
     </div>
-    <!-- <?php //endforeach ?> -->
+    <?php endforeach ?> 
 </section>
 <section class="contact">
     <p>Pour toutes demandes, plus de renseignements ou pour nous donnez votre avis, n'hesitez pas à nous envoyez un message.</p>
-    <div class="button right"><a href="#">Nous contacter</a></div>
+    <div class="button right"><a href="?action=contactUs">Nous contacter</a></div>
 </section>

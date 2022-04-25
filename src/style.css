@@ -173,7 +173,7 @@ h2{
     justify-content: space-between;
     align-content: center;
     text-align: center;
-    margin: 10em auto 3em auto;
+    margin: 3em auto 3em auto;
 }
 .banner{
     justify-content: center;
@@ -331,6 +331,14 @@ iframe{
     top: 31em;
     left: 47em;
 }
+.legal{
+    margin-bottom: 5em;
+}
 .legal h3{
     text-align: center;
+}
+/****** ERROR   *******/
+.error{
+    text-align: center;
+    margin: 3em auto 10em auto;
 }

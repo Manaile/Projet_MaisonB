@@ -17,86 +17,16 @@
     </div>
 </section>
 <section class="gallery">
+        <?php foreach($items as $item): ?>
         <figure>
-            <img src="../src/img/equipe/equipe3.jpg" alt="Mike boulanger en chef chez Maison B">
+            <img src="<?= $item['url'] ?>" alt="<?= $item['description'] ?>">
             <figcaption>
-                <div><strong>Mike</strong>
-                <p>boulanger en chef</p>
+                <div><strong><?= $item['name'] ?></strong>
+                <p><?= $item['profession'] ?></p>
                 </div>
             </figcaption>
         </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe4.jpg" alt="Pierre boulanger chez Maison B">
-            <figcaption>
-                <div><strong>Pierre</strong>
-                <p>vendeur comptoir</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe5.jpg" alt="Julien boulanger chez Maison B">
-            <figcaption>
-                <div><strong>Julien</strong>
-                <p>boulanger</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe6.jpg" alt="Marie boulangère chez Maison B">
-            <figcaption>
-                <div><strong>Marie</strong>
-                <p>boulangère</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe7.jpg" alt="Aymeric boulanger/pâtissier chez Maison B">
-            <figcaption>
-                <div><strong>Aymeric</strong>
-                <p>boulanger/pâtissier</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe8.jpg" alt="Aurelie vendeuse chez Maison B">
-            <figcaption>
-                <div><strong>Aurelie</strong>
-                <p>vendeuse</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe9.jpg" alt="Nora Cheffe pâtissière chez Maison B">
-            <figcaption>
-                <div><strong>Nora</strong>
-                <p>Cheffe pâtissière</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe10.jpg" alt="Aissa apprentie pâtissière chez Maison B">
-            <figcaption>
-                <div><strong>Aissa</strong>
-                <p>apprentie pâtissière</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe11.jpg" alt="Djibril boulanger chez Maison B">
-            <figcaption>
-                <div><strong>Djibril</strong>
-                <p>boulanger</p>
-                </div>
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="../src/img/equipe/equipe12.jpg" alt="Youssouf pâtissier chez Maison B">
-            <figcaption>
-                <div><strong>Youssouf</strong>
-                <p>pâtissier</p>
-                </div>
-            </figcaption>
-        </figure>
+        <?php endforeach ?>
 </section>
 
 <section class="contact">
