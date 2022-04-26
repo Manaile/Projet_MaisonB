@@ -4,7 +4,7 @@
         <h2>LA PATISSERIE</h2>
         <div class="bloc">
             <p><em>Goût, créativité et qualité : ce sont les trois mots d’ordre qui définissent l’offre sucrée de Maison B. Retrouvez ici nos gâteaux, macarons et confiseries réalisés chaque jour dans notre laboratoire situé à Paris.</em></p>
-            <div class="button"><a href="#">Nous contacter</a></div>
+            <div class="button"><a href="?action=contactUs">Nous contacter</a></div>
         </div>
     </div>
     <div><img class="img_right" src="../src/img/patisserie/patisserie24.jpg" alt="photo de différentes tartes"></div>
@@ -17,8 +17,10 @@
         <p><strong> Pour quelles créations allez-vous succomber ?</strong></p>
     </div>
 </section>
-<section class="grid">
-
+<section class="grid_pastry">
+    <?php foreach($items as $item): ?>
+        <img class="img<?= $item['id_pastry'] ?> gallery__img" src="<?= $item['url'] ?>" alt="<?= $item['description'] ?>">
+    <?php endforeach ?>
 </section>
 <section class="contact">
     <p>Pour toutes demandes, plus de renseignements ou pour nous donnez votre avis, n'hesitez pas à nous envoyez un message.</p>

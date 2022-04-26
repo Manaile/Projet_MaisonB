@@ -51,8 +51,8 @@ class ContactUsModel extends Database{
         return $send;
     }
     else{
-        //choisir un objet
-        echo "choisir un objet";
+        //message pour choisir un objet
+        //echo "choisir un objet";
     }
     }
    

@@ -13,7 +13,8 @@ class PastryModel extends Database{
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
         (
-            'SELECT url,
+            'SELECT id_pastry,
+            url,
             description 
             FROM pastry_gallery'
         );

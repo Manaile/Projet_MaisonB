@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 //include_once('../controller/PastryClassController.php');
 //include_once('../controller/AboutUsController.php');
 //include_once('../controller/ContactUsController.php');
-//include_once('../controller/legalDisclaimerController.php');
+include_once('../controller/legalDisclaimerController.php');
 //include_once('../controller/error404Controller.php');
 
    class Router{
@@ -36,10 +36,10 @@ error_reporting(E_ALL);
                         break;
 
                     case 'pastry':
-                            $PastryCont = new PastryController();
-                            return $PastryCont->showPastryImg();
-                            //var_dump($blop2);
-                            break;
+                        $PastryCont = new PastryController();
+                        return $PastryCont->showPastryImg();
+                        //var_dump($blop2);
+                        break;
                     
                     case 'pastryClass':
                         $PastryClassCont = new PastryCLassController();
@@ -67,8 +67,9 @@ error_reporting(E_ALL);
             }}
             else {
                 //envoie vars la page d'erreur 404 !!
-                $error404 = new error404Controller();
-                return $error404->showError404Controller();
+                //echo "fail";
+                //$error404 = new error404Controller();
+                //return $error404->showError404Controller();
             }
            
         }
