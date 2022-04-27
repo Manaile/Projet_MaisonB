@@ -8,10 +8,10 @@ error_reporting(E_ALL);
 //include_once('../controller/HomeController.php');
 //include_once('../controller/BakeryController.php');
 //include_once('../controller/PastryController.php');
-//include_once('../controller/PastryClassController.php');
+include_once('../controller/PastryClassController.php');
 //include_once('../controller/AboutUsController.php');
 //include_once('../controller/ContactUsController.php');
-include_once('../controller/legalDisclaimerController.php');
+//include_once('../controller/legalDisclaimerController.php');
 //include_once('../controller/error404Controller.php');
 
    class Router{
