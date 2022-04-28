@@ -4,9 +4,6 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-
-
-
    class Router{
         private $action;
     
@@ -57,6 +54,11 @@ error_reporting(E_ALL);
                         $legalDisclaimer = new legalDisclaimerController();
                         return $legalDisclaimer->showLegalDisclaimer();
                         break;
+
+                    case 'admin':
+                        $Admin = new LoginController();
+                        return $Admin->logAdmin();
+                        break;
                         
             }}
             else if(!isset($_GET['action'])){
@@ -95,6 +97,9 @@ error_reporting(E_ALL);
     }
     else if($_GET['action']=="legalDisclaimer"){
         include_once('../controller/legalDisclaimerController.php');
+    }
+    else if($_GET['action']=="admin"){
+        include_once('../controller/LoginController.php');
     }
     else{
         include_once('../controller/error404Controller.php');

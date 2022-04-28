@@ -521,5 +521,5 @@ iframe{
 /****** ERROR   *******/
 .error{
     text-align: center;
-    margin: 3em auto 10em auto;
+    color: red;
 }
