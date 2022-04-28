@@ -3,19 +3,19 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-    define('ROOT',dirname(__DIR__));
+define('ROOT',dirname(__DIR__));
     
 
-    require ROOT.'/router/Router.php';
+require ROOT.'/router/Router.php';
 
-    //instanciation de la class Router
-    $rout = new Router();
+   
+    //instanciation du Router
+$rout = new Router();
 
-    //instanciation des methods de la class Router
-    $items = $rout->getControllers();
-    //var_dump($review);
-
+    //instanciation de la  method de la class Router
+$items = $rout->getController();
+   
     //inclure l'index.phtml
-    include ROOT.'/views/index.phtml';
-
+include ROOT.'/views/index.phtml';
+    
 ?>

@@ -5,19 +5,13 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 
-//include_once('../controller/HomeController.php');
-//include_once('../controller/BakeryController.php');
-//include_once('../controller/PastryController.php');
-include_once('../controller/PastryClassController.php');
-//include_once('../controller/AboutUsController.php');
-//include_once('../controller/ContactUsController.php');
-//include_once('../controller/legalDisclaimerController.php');
-//include_once('../controller/error404Controller.php');
+
 
    class Router{
         private $action;
     
-        public function getControllers(){
+        
+        public function getController(){
             if(isset($_GET['action'])){
                 $action = $_GET['action'];
 
@@ -65,11 +59,15 @@ include_once('../controller/PastryClassController.php');
                         break;
                         
             }}
-            else {
+            else if(!isset($_GET['action'])){
+                $HomeCont = new HomeController();
+                return $HomeCont->showReviews();
+            }
+            else{
                 //envoie vars la page d'erreur 404 !!
                 //echo "fail";
-                //$error404 = new error404Controller();
-                //return $error404->showError404Controller();
+                $error404 = new error404Controller();
+                return $error404->showError404();
             }
            
         }
@@ -77,4 +75,28 @@ include_once('../controller/PastryClassController.php');
         
     }
 
+    if(!isset($_GET['action']) || empty($_GET['action']) || $_GET['action']=="home"){
+        include_once('../controller/HomeController.php');
+    }
+    else if($_GET['action']=="bakery"){
+        include_once('../controller/BakeryController.php');
+    }
+    else if($_GET['action']=="pastry"){
+        include_once('../controller/PastryController.php');
+    }
+    else if($_GET['action']=="pastryClass"){
+        include_once('../controller/PastryClassController.php');
+    }
+    else if($_GET['action']=="aboutUs"){
+        include_once('../controller/AboutUsController.php');
+    }
+    else if($_GET['action']=="contactUs"){
+        include_once('../controller/ContactUsController.php');
+    }
+    else if($_GET['action']=="legalDisclaimer"){
+        include_once('../controller/legalDisclaimerController.php');
+    }
+    else{
+        include_once('../controller/error404Controller.php');
+    }
 ?>
