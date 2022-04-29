@@ -10,8 +10,8 @@ class LoginModel extends Database{
         parent::__construct();
     }
     public function logAdmin(){
-        
-        //envoyer ce qu'on a besoin
+        session_start();
+       // envoyer ce qu'on a besoin
         if(!empty($_POST)){
             $email= $_POST['email'];
 
@@ -19,32 +19,30 @@ class LoginModel extends Database{
         (
             'SELECT email,
                     password,
-                    name
+                   name
              FROM admin 
-             WHERE email = ?
-             '
+            WHERE password = ?
+            '
         );
         
-        $query->execute( array($_POST['email']));
+        $query->execute([$_POST['password']]);
     
-        $logAdmin = $query->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($logAdmin);
+        $logAdmin = $query->fetch(PDO::FETCH_ASSOC);
+        
+        if($logAdmin && [$logAdmin['password']] === [$_POST['password']] && [$logAdmin['email']] === [$_POST['email']]) {
+            $_SESSION['name'] = $logAdmin['name'];
+            $_SESSION['password'] = $logAdmin['password'];
+            $_SESSION['email'] = $logAdmin['email'];
 
-        if( isset($logAdmin['password']) === "maisonb") {
+            header('Location: index.php?action=pastry');
 
-            header('Location: index.php?action=bakery');
-
-        }else if (isset($logAdmin['email']) != array($_POST['email'])){
-            
+        }else if(!($logAdmin) || [$logAdmin['password']] != [$_POST['password']] || [$logAdmin['email']] != [$_POST['email']]){
             return  "erreur de connexion";
-        }else if (isset($logAdmin['password']) != array($_POST['password'])){
-            
-            return  "erreur de connexion";
-        } 
+        }
         
     }
-    
 }
 }
+//}
 
 ?>
