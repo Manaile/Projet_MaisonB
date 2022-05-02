@@ -1,0 +1,30 @@
+
+<section class="banner">
+            <h2>Demandes/Renseignements</h2>
+</section>
+<hr>
+<section class="admin">
+<table>
+    <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Phone</td>
+            <td>Email</td>
+            <td>Message</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($items as $item): ?>
+        <tr>
+            <td><?= $item['nameContact'] ?></td>
+            <td><?= $item['phoneContact'] ?></td>
+            <td><?= $item['mailContact'] ?></td>
+            <td><?= $item['messageContact'] ?></td>
+            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
+</section>

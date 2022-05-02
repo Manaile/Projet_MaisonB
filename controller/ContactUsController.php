@@ -17,6 +17,5 @@ class ContactUsController{
         //var_dump($blop);
     }
 }
-$template = 'contactUs';
 
 ?>

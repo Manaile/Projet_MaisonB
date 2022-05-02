@@ -14,9 +14,9 @@ class HomeModel extends Database{
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
         (
-            'SELECT name,
-            message   
-            FROM reviews'
+            'SELECT nameReviews,
+            messageReviews 
+            FROM `reviews`'
         );
 
         $query->execute();

@@ -3,6 +3,7 @@ ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+
 require_once '../database/Database.php';
 
 class LoginModel extends Database{
@@ -10,7 +11,7 @@ class LoginModel extends Database{
         parent::__construct();
     }
     public function logAdmin(){
-        session_start();
+        
        // envoyer ce qu'on a besoin
         if(!empty($_POST)){
             $email= $_POST['email'];
@@ -29,12 +30,12 @@ class LoginModel extends Database{
     
         $logAdmin = $query->fetch(PDO::FETCH_ASSOC);
         
-        if($logAdmin && [$logAdmin['password']] === [$_POST['password']] && [$logAdmin['email']] === [$_POST['email']]) {
+        if($logAdmin && [$logAdmin['password']] === [$_POST['password']] && [$logAdmin['email']] === [$_POST['email']]){
             $_SESSION['name'] = $logAdmin['name'];
             $_SESSION['password'] = $logAdmin['password'];
             $_SESSION['email'] = $logAdmin['email'];
-
-            header('Location: index.php?action=pastry');
+            //var_dump($_SESSION['name']);
+            header('Location: index.php?action=homeAdmin');
 
         }else if(!($logAdmin) || [$logAdmin['password']] != [$_POST['password']] || [$logAdmin['email']] != [$_POST['email']]){
             return  "erreur de connexion";

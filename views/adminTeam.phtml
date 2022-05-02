@@ -1,0 +1,29 @@
+<section class="banner">
+            <h2>L'Équipe Maison B</h2>
+</section>
+<hr>
+<section class="admin">
+<table>
+    <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Poste</td>
+            <td>Liens des photos</td>
+            <td>Description de la photo</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($items as $item): ?>
+        <tr>
+            <td><?= $item['name_about'] ?></td>
+            <td><?= $item['profession_about'] ?></td>
+            <td><?= $item['url_about'] ?></td>
+            <td><?= $item['description_about'] ?></td>
+            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
+</section>

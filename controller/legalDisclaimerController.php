@@ -12,5 +12,4 @@ class legalDisclaimerController{
         //var_dump($blop);
     }
 }
-$template = 'legalDisclaimer';
 ?>

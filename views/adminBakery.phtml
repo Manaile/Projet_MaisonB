@@ -1,0 +1,27 @@
+
+<section class="banner">
+            <h2>La Boulangerie</h2>
+</section>
+<hr>
+
+<section class="admin">
+<table>
+    <thead>
+        <tr>
+            <td>Liens des photos</td>
+            <td>Description de la photo</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($items as $item): ?>
+        <tr>
+            <td><?= $item['url_bakery'] ?></td>
+            <td><?= $item['description_bakery'] ?></td>
+            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
+</section>

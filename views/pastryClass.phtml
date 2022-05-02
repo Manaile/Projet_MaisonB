@@ -20,11 +20,11 @@
     <?php foreach($items as $item): ?>
     <div class="card">
         <div>
-            <img src="<?= $item['url'] ?>" alt="<?= $item['description'] ?>">
+            <img src="<?= $item['url_pastryclass'] ?>" alt="<?= $item['description_pastryclass'] ?>">
         </div>
-        <p><strong><?= $item['name'] ?></strong></p>
-        <p><?= $item['date'] ?></p>
-        <p><?= $item['price'] ?> €</p>
+        <p><strong><?= $item['name_pastryclass'] ?></strong></p>
+        <p><?= $item['date_pastryclass'] ?></p>
+        <p><?= $item['price_pastryclass'] ?> €</p>
         <div class="button"><a href="?action=shoppingCart">Reserver</a></div>
     </div>
     <?php endforeach ?> 

@@ -16,7 +16,7 @@ class ContactUsModel extends Database{
             '
                 INSERT INTO
                 contact
-                (name, phone, mail, message)
+                (nameContact, phoneContact, mailContact, messageContact)
                 VALUES
                 (?, ?, ?, ?)
             '
@@ -36,7 +36,7 @@ class ContactUsModel extends Database{
             '
                 INSERT INTO
                 reviews
-                (name, phone, mail, message)
+                (nameReviews, phoneReviews, mailReviews, messageReviews)
                 VALUES
                 (?, ?, ?, ?)
             '

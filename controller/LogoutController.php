@@ -4,11 +4,11 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 
-class error404Controller{
-    private $error404;
+class LogoutController{
+    private $logout;
 
-    public function showError404(){
-       return $this->error404;
+    public function getlogout(){
+       return $this->logout;
         //var_dump($blop);
     }
 }

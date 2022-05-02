@@ -17,5 +17,4 @@ class AboutUsController{
         //var_dump($blop);
     }
 }
-$template = 'aboutUs';
 ?>

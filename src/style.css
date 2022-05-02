@@ -24,7 +24,7 @@ body{
     text-decoration: none;
     margin:auto 20px auto 20px;
  }
- .navbar li:not(:last-child):hover{
+.index li:not(:last-child):hover{
      border: 2px solid #594A47;
      border-radius: 15px 5px;
  }
@@ -527,3 +527,39 @@ iframe{
     text-align: center;
     color: red;
 }
+/******     ADMIN   *******/
+.homeAdmin>nav{
+    margin: 5em auto 5em auto;
+}
+.homeAdmin li:hover{
+    font-weight: bold;
+}
+.admin{
+    text-align: center;
+}
+table{
+    width: 70%;
+    margin: 5em auto 5em auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+tbody>tr:nth-child(odd){
+    background-color: #ecdec959;
+}
+thead{
+    font-weight: bold;
+}
+td{
+    border: 0.5px solid black;
+    padding: 1.5em;
+}
+.admin a i{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #594A47;
+    margin:0.2em
+}
+.admin i{
+    
+}
+

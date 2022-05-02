@@ -1,0 +1,32 @@
+
+<section class="banner">
+            <h2>Les Ateliers</h2>
+</section>
+<hr>
+<section class="admin">
+<table>
+    <thead>
+        <tr>
+            <td>Nom de l'atelier</td>
+            <td>Date</td>
+            <td>Prix</td>
+            <td>Liens des photos</td>
+            <td>Description de la photo</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($items as $item): ?>
+        <tr>
+            <td><?= $item['name_pastryClass'] ?></td>
+            <td><?= $item['date_pastryClass'] ?></td>
+            <td><?= $item['price_pastryClass'] ?></td>
+            <td><?= $item['url_pastryClass'] ?></td>
+            <td><?= $item['description_pastryClass'] ?></td>
+            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>
+<p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
+</section>

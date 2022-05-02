@@ -17,5 +17,4 @@ class BakeryController{
         //var_dump($blop);
     }
 }
-$template = 'bakery';
 ?>

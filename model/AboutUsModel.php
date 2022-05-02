@@ -13,10 +13,10 @@ class AboutUsModel extends Database{
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
         (
-            'SELECT url,
-            description,
-            name,
-            profession
+            'SELECT url_about,
+            description_about,
+            name_about,
+            profession_about
             FROM about_gallery'
         );
 

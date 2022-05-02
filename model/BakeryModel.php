@@ -14,8 +14,8 @@ class BakeryModel extends Database{
         $query = $this->pdo->prepare
         (
             'SELECT id_bakery,
-            url,
-            description 
+            url_bakery,
+            description_bakery 
             FROM bakery_gallery'
         );
 

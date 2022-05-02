@@ -17,5 +17,4 @@ class PastryController{
         //var_dump($blop);
     }
 }
-$template = 'pastry';
 ?>

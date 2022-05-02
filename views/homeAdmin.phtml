@@ -1,0 +1,21 @@
+<section class="banner">
+            <h2>Page Admin</h2>
+</section>
+<hr>
+<section class="article2 homeAdmin">
+    <div>
+        <h3>Bienvenue <?= $_SESSION['name'] ?></h3>
+    </div>
+    <nav>
+            <ul class="navbar admin">
+                <li><a href="?action=admin">Les Admins</a></li>
+                <li><a href="?action=adminTeam">L'Equipe</a></li>
+                <li><a href="?action=adminBakery">La Boulangerie</a></li>
+                <li><a href="?action=adminPastry">La Pâtisserie</a></li>
+                <li><a href="?action=adminClass">Les Ateliers</a></li>
+                <li><a href="?action=adminReviews">Les Avis</a></li>
+                <li><a href="?action=adminContact">Les Demandes/Renseignements</a></li>
+            </ul>   
+        </nav>
+        <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
+</section>

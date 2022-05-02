@@ -18,5 +18,4 @@ class HomeController{
         //var_dump($blop);
     }
 }
-$template = 'home';
 ?>
