@@ -1,4 +1,4 @@
-
+<?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>Administrateurs</h2>
 </section>
@@ -14,16 +14,58 @@
         </tr>
     </thead>
     <tbody>
-        
         <?php foreach($items as $item): ?>
         <tr>
             <td><?= $item['name'] ?></td>
             <td><?= $item['email'] ?></td>
             <td><?= $item['password'] ?></td>
-            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+            <td>
+                <a href="?action=get&id=<?= $item['id_admin'] ?>"><i class="bi bi-pencil"></i></a>
+                <a href=""><i class="bi bi-trash"></i></a>
+            </td>
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+<?php if ($action == 'get') : ?>
+
+<form action="?action=update" method="POST">
+    <div>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" value= $_GET['name']>
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="mail">
+    </div>
+    <div>
+        <label for="mail">Mot de passe:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <button type="submit">Modifier</button>
+</form>
+
+<?php  else: ?>
+
+<form action="?action=create" method="POST">
+    <div>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" name="mail">
+    </div>
+    <div>
+        <label for="mail">Mot de passe:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <button type="submit">Ajouter</button>
+</form>
+<?php endif ?>
+
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
+<?php else: ?>
+    <?= header('Location: index.php?action=login') ?>
+<?php endif ?>

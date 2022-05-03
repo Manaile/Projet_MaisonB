@@ -104,6 +104,11 @@ error_reporting(E_ALL);
                         $out = new LogoutController();
                         return $out->getlogout();
                         break;
+
+                    case 'get':
+                        $get = new GetController($id);
+                        return $get->getAdminController($id);
+                        break;
                         
                         
             }}
@@ -118,8 +123,6 @@ error_reporting(E_ALL);
             }
            
         }
-        
-        
     }
 
     if(!isset($_GET['action']) || empty($_GET['action']) || $_GET['action']=="home"){
@@ -189,7 +192,11 @@ error_reporting(E_ALL);
     else if($_GET['action']=="logout"){
         include_once('../controller/LogoutController.php');
         $template = 'login';
-    } 
+    }
+    else if($_GET['action']=="get"){
+        include_once('../controller/GetController.php');
+        $template = 'admin';
+    }
     else{
         include_once('../controller/error404Controller.php');
         $template = 'error404';

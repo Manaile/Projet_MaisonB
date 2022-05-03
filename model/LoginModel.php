@@ -44,6 +44,5 @@ class LoginModel extends Database{
     }
 }
 }
-//}
 
 ?>

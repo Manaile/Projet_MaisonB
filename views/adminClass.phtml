@@ -1,4 +1,4 @@
-
+<?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>Les Ateliers</h2>
 </section>
@@ -30,3 +30,6 @@
 </table>
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
+<?php else: ?>
+    <?= header('Location: index.php?action=login') ?>
+<?php endif ?>

@@ -8,6 +8,7 @@ class LogoutController{
     private $logout;
 
     public function getlogout(){
+        session_destroy();
        return $this->logout;
         //var_dump($blop);
     }
