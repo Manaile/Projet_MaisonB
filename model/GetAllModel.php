@@ -6,11 +6,11 @@ error_reporting(E_ALL);
 
 require_once '../database/Database.php';
 
-class AdminModel extends Database{
+class GetAllModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getAdmin(){
+    public function getAllAdmin(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -22,11 +22,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getAdmin = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllAdmin = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getAdmin;
+        return $getAllAdmin;
     }
-    public function getAbout(){
+    public function getAllAbout(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -39,11 +39,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getAbout = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllAbout = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getAbout;
+        return $getAllAbout;
     }
-    public function getBakery(){
+    public function getAllBakery(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -54,11 +54,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getBakery = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllBakery = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getBakery;
+        return $getAllBakery;
     }
-    public function getPastry(){
+    public function getAllPastry(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -69,11 +69,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getPastry = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllPastry = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getPastry;
+        return $getAllPastry;
     }
-    public function getClass(){
+    public function getAllClass(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -87,11 +87,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getClass = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllClass = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getClass;
+        return $getAllClass;
     }
-    public function getReviews(){
+    public function getAllReviews(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -104,11 +104,11 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getReviews = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllReviews = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getReviews;
+        return $getAllReviews;
     }
-    public function getContact(){
+    public function getAllContact(){
         //recup ce qu'on a besoin
         $query = $this->pdo->prepare
     (
@@ -121,9 +121,9 @@ class AdminModel extends Database{
         );
 
         $query->execute();
-        $getContact = $query->fetchAll(PDO::FETCH_ASSOC);
+        $getAllContact = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($get);
-        return $getContact;
+        return $getAllContact;
     }
    
 }

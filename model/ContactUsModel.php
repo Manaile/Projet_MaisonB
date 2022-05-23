@@ -50,10 +50,12 @@ class ContactUsModel extends Database{
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
     }
-    else{
+    else if(!empty($_POST) && $_POST['choice']=="0"){
         //message pour choisir un objet
         //echo "choisir un objet";
+        return  "Merci d'indiquer l'objet de votre demande.";
     }
+    
     }
    
 }

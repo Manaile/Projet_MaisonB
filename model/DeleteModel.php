@@ -5,11 +5,11 @@ error_reporting(E_ALL);
 
 require_once '../database/Database.php';
 
-class GetModel extends Database{
+class DeleteModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getAdmin($id){
+    public function deleteAdmin($id){
         //recup ce qu'on a besoin
         $id= array($_GET['id']);
         $query = $this->pdo->prepare

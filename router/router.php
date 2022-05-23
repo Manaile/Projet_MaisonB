@@ -66,38 +66,38 @@ error_reporting(E_ALL);
                         break;       
                     
                     case 'admin':
-                        $Admin = new AdminController();
-                        return $Admin->showAdmin();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllAdmin();
                         break;
 
                     case 'adminTeam':
-                        $Admin = new AdminController();
-                        return $Admin->showAbout();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllAbout();
                         break;
 
                     case 'adminBakery':
-                        $Admin = new AdminController();
-                        return $Admin->showBakery();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllBakery();
                         break;
 
                     case 'adminPastry':
-                        $Admin = new AdminController();
-                        return $Admin->showPastry();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllPastry();
                         break;
 
                     case 'adminClass':
-                        $Admin = new AdminController();
-                        return $Admin->showClass();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllClass();
                         break;
 
                     case 'adminReviews':
-                        $Admin = new AdminController();
-                        return $Admin->showReviews();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllReviews();
                         break;
 
                     case 'adminContact':
-                        $Admin = new AdminController();
-                        return $Admin->showContact();
+                        $GetAll = new GetAllController();
+                        return $GetAll->showAllContact();
                         break;
 
                     case 'logout':
@@ -106,8 +106,26 @@ error_reporting(E_ALL);
                         break;
 
                     case 'get':
-                        $get = new GetController($id);
-                        return $get->getAdminController($id);
+                        $contol = new GetController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $contol->getAdminController($id);
+                        break;
+                        
+                    case 'update':
+                        $update = new UpdateController();
+                        $id= $_POST['id'];
+                        $name = $_POST['name'];
+                        $email = $_POST['mail'];
+                        $password = $_POST['password'];
+                        return $update->updateAdminController($id,$name,$email,$password);
+                        break;
+
+                    case 'create':
+                        $CreateNewAdmin = new CreateController();
+                        return $CreateNewAdmin->getAdmin();
+                        //var_dump($blop2);
                         break;
                         
                         
@@ -162,31 +180,31 @@ error_reporting(E_ALL);
         $template = 'homeAdmin';
     }
     else if($_GET['action']=="admin"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'admin';
     }
     else if($_GET['action']=="adminTeam"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminTeam';
     }
     else if($_GET['action']=="adminBakery"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminBakery';
     }
     else if($_GET['action']=="adminPastry"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminPastry';
     }    
     else if($_GET['action']=="adminClass"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminClass';
     }
     else if($_GET['action']=="adminReviews"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminReviews';
     }
     else if($_GET['action']=="adminContact"){
-        include_once('../controller/AdminController.php');
+        include_once('../controller/GetAllController.php');
         $template = 'adminContact';
     }  
     else if($_GET['action']=="logout"){
@@ -196,6 +214,14 @@ error_reporting(E_ALL);
     else if($_GET['action']=="get"){
         include_once('../controller/GetController.php');
         $template = 'admin';
+    }
+    else if($_GET['action']=="update"){
+        include_once('../controller/UpdateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="create"){
+        include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
     }
     else{
         include_once('../controller/error404Controller.php');

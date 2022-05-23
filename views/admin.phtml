@@ -18,36 +18,45 @@
         <tr>
             <td><?= $item['name'] ?></td>
             <td><?= $item['email'] ?></td>
-            <td><?= $item['password'] ?></td>
+            <td><?= password_hash($item['password'], PASSWORD_DEFAULT) ?></td>
             <td>
                 <a href="?action=get&id=<?= $item['id_admin'] ?>"><i class="bi bi-pencil"></i></a>
-                <a href=""><i class="bi bi-trash"></i></a>
+                <a href="?action=delete"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
-<?php if ($action == 'get') : ?>
+
+<?php if ($id=isset($_GET['id']) && !empty($items)): ?>
 
 <form action="?action=update" method="POST">
     <div>
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" value="<?= $item['id_admin'] ?>">
+    </div>
+    <div>
         <label for="name">Nom:</label>
-        <input type="text" id="name" name="name" value= $_GET['name']>
+        <input type="text" id="name" name="name" value="<?= $item['name'] ?>">
     </div>
     <div>
         <label for="mail">E-mail:</label>
-        <input type="email" id="mail" name="mail">
+        <input type="email" id="mail" name="mail" value="<?= $item['email'] ?>">
     </div>
     <div>
         <label for="mail">Mot de passe:</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" value="<?= password_hash($item['password'], PASSWORD_DEFAULT) ?>">
     </div>
     <button type="submit">Modifier</button>
 </form>
 
-<?php  else: ?>
-
+<?php  elseif($action ='admin' && !empty($items)) : ?>
+ 
 <form action="?action=create" method="POST">
+    <div>
+        <label for="name">Id:</label>
+        <input type="text" id="id" name="id">
+    </div>
     <div>
         <label for="name">Nom:</label>
         <input type="text" id="name" name="name">
