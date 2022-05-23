@@ -16,6 +16,22 @@ class CreateController{
        return $this->CreateModel->sendAdmin();
         //var_dump($blop);
     }
+    public function getAdminTeam(){
+        return $this->CreateModel->sendAdminTeam();
+         //var_dump($blop);
+     }
+     public function getAdminBakery(){
+        return $this->CreateModel->sendAdminBakery();
+         //var_dump($blop);
+     }
+     public function getAdminPastry(){
+        return $this->CreateModel->sendAdminPastry();
+         //var_dump($blop);
+     }
+     public function getAdminPastryClass(){
+        return $this->CreateModel->sendAdminPastryClass();
+         //var_dump($blop);
+     }
 }
 
 ?>

@@ -18,11 +18,52 @@
         <tr>
             <td><?= $item['url_pastry'] ?></td>
             <td><?= $item['description_pastry'] ?></td>
-            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+            <td>
+                <a href="?action=getPastry&id=<?= $item['id_pastry'] ?>"><i class="bi bi-pencil"></i></a>
+                <a href="?action=deletePastry&id=<?= $item['id_pastry'] ?>"><i class="bi bi-trash"></i></a>
+            </td>  
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+
+<?php if ($id=isset($_GET['id']) && !empty($items)): ?>
+
+<form action="?action=updatePastry" method="POST">
+    <div>
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" value="<?= $item['id_pastry'] ?>">
+    </div>
+    <div>
+        <label for="picture">Photo:</label>
+        <input type="text" id="picture" name="picture" value="<?= $item['url_pastry'] ?>">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<?= $item['description_pastry'] ?>">
+    </div>
+    <button type="submit">Modifier</button>
+</form>
+
+<?php  elseif($action ='admin' && !empty($items)) : ?>
+ 
+<form action="?action=createPastry" method="POST">
+    <div>
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id"">
+    </div>
+    <div>
+        <label for="picture">Photo:</label>
+        <input type="text" id="picture" name="picture">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+    </div>
+    <button type="submit">Ajouter</button>
+</form>
+<?php endif ?>
+
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

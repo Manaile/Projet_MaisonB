@@ -106,11 +106,11 @@ error_reporting(E_ALL);
                         break;
 
                     case 'get':
-                        $contol = new GetController();
+                        $control = new GetController();
                         // si on récupère l'id sélectionné dans l'url alors on lance 
                         // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
-                        return $contol->getAdminController($id);
+                        return $control->getAdminController($id);
                         break;
                         
                     case 'update':
@@ -127,7 +127,155 @@ error_reporting(E_ALL);
                         return $CreateNewAdmin->getAdmin();
                         //var_dump($blop2);
                         break;
+                    
+                    case 'delete':
+                        $delete = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $delete->deleteAdminController($id);
+                        break;
+                    
+                    case 'getTeam':
+                        $controlTeam = new GetController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $controlTeam->getAdminTeamController($id);
+                        break;
+
+                    case 'updateTeam':
+                        $updateTeam = new UpdateController();
+                        $id= $_POST['id'];
+                        $name = $_POST['name'];
+                        $post = $_POST['profession'];
+                        $url = $_POST['picture'];
+                        $description = $_POST['description'];
+                        return $updateTeam->updateAdminTeamController($id,$url,$name,$post,$description);
+                        break;
+
+                    case 'createTeam':
+                        $CreateNewAdminTeam = new CreateController();
+                        return $CreateNewAdminTeam->getAdminTeam();
+                        break;
+
+                    case 'deleteTeam':
+                        $deleteTeam = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deleteTeam->deleteAdminTeamController($id);
+                        break;
+
+                    case 'getBakery':
+                        $controlBakery = new GetController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $controlBakery->getAdminBakeryController($id);
+                        break;
+
+                    case 'updateBakery':
+                        $updateBakery = new UpdateController();
+                        $id= $_POST['id'];
+                        $url = $_POST['picture'];
+                        $description = $_POST['description'];
+                        return $updateBakery->updateAdminBakeryController($id,$url,$description);
+                        break;
+
+                    case 'createBakery':
+                        $CreateNewAdminBakery = new CreateController();
+                        return $CreateNewAdminBakery->getAdminBakery();
+                        break;
+
+                    case 'deleteBakery':
+                        $deleteBakery = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deleteBakery->deleteAdminBakeryController($id);
+                        break;
+
+                    case 'getPastry':
+                        $controlPastry = new GetController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $controlPastry->getAdminPastryController($id);
+                        break;
+
+                    case 'updatePastry':
+                        $updatePastry = new UpdateController();
+                        $id= $_POST['id'];
+                        $url = $_POST['picture'];
+                        $description = $_POST['description'];
+                        return $updatePastry->updateAdminPastryController($id,$url,$description);
+                        break;
+    
+                    case 'createPastry':
+                        $CreateNewAdminPastry = new CreateController();
+                        return $CreateNewAdminPastry->getAdminPastry();
+                        break;
+
+                    case 'deletePastry':
+                        $deletePastry = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deletePastry->deleteAdminPastryController($id);
+                        break;
+
+                    case 'getPastryClass':
+                        $controlPastryClass = new GetController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $controlPastryClass->getAdminPastryClassController($id);
+                        break;
+
+                    case 'updatePastryClass':
+                        $updatePastryClass = new UpdateController();
+                        $id= $_POST['id'];
+                        $url = $_POST['picture'];
+                        $description = $_POST['description'];
+                        $name= $_POST['name'];
+                        $date = $_POST['date'];
+                        $price = $_POST['price'];
+                        return $updatePastryClass->updateAdminPastryClassController($id,$url,$description, $name, $date, $price);
+                        break;
+
+                    case 'createPastryClass':
+                            $CreateNewAdminPastryClass = new CreateController();
+                            return $CreateNewAdminPastryClass->getAdminPastryClass();
+                            break;
+
+                    case 'deletePastryClass':
+                        $deletePastryClass = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deletePastryClass->deleteAdminPastryClassController($id);
+                        break;
+
+                    case 'deleteReviews':
+                        $deleteReviews = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deleteReviews->deleteAdminReviewsController($id);
+                        break;
+
+                        case 'deleteContact':
+                            $deleteContact = new DeleteController();
+                            // si on récupère l'id sélectionné dans l'url alors on lance 
+                            // la méthode qui va ensuite modifier
+                            $id= $_GET['id'];
+                            return $deleteContact->deleteAdminContactController($id);
+                            break;
+    
+
                         
+    
                         
             }}
             else if(!isset($_GET['action'])){
@@ -221,6 +369,82 @@ error_reporting(E_ALL);
     }
     else if($_GET['action']=="create"){
         include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="delete"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="getTeam"){
+        include_once('../controller/GetController.php');
+        $template = 'adminTeam';
+    }
+    else if($_GET['action']=="updateTeam"){
+        include_once('../controller/UpdateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="createTeam"){
+        include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deleteTeam"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="getBakery"){
+        include_once('../controller/GetController.php');
+        $template = 'adminBakery';
+    }
+    else if($_GET['action']=="updateBakery"){
+        include_once('../controller/UpdateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="createBakery"){
+        include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deleteBakery"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="getPastry"){
+        include_once('../controller/GetController.php');
+        $template = 'adminPastry';
+    }
+    else if($_GET['action']=="updatePastry"){
+        include_once('../controller/UpdateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="createPastry"){
+        include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deletePastry"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="getPastryClass"){
+        include_once('../controller/GetController.php');
+        $template = 'adminClass';
+    }
+    else if($_GET['action']=="updatePastryClass"){
+        include_once('../controller/UpdateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="createPastryClass"){
+        include_once('../controller/CreateController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deletePastryClass"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deleteReviews"){
+        include_once('../controller/DeleteController.php');
+        $template = 'homeAdmin';
+    }
+    else if($_GET['action']=="deleteContact"){
+        include_once('../controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     else{

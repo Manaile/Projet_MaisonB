@@ -23,11 +23,76 @@
             <td><?= $item['price_pastryClass'] ?></td>
             <td><?= $item['url_pastryClass'] ?></td>
             <td><?= $item['description_pastryClass'] ?></td>
-            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+            <td>
+                <a href="?action=getPastryClass&id=<?= $item['id_pastryClass'] ?>"><i class="bi bi-pencil"></i></a>
+                <a href="?action=deletePastryClass&id=<?= $item['id_pastryClass'] ?>"><i class="bi bi-trash"></i></a>
+            </td>  
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+
+<?php if ($id=isset($_GET['id']) && !empty($items)): ?>
+
+<form action="?action=updatePastryClass" method="POST">
+    <div>
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" value="<?= $item['id_pastryClass'] ?>">
+    </div>
+    <div>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" value="<?= $item['name_pastryClass'] ?>">
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="<?= $item['date_pastryClass'] ?>">
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" value="<?= $item['price_pastryClass'] ?>">
+    </div>
+    <div>
+        <label for="picture">Photo:</label>
+        <input type="text" id="picture" name="picture" value="<?= $item['url_pastryClass'] ?>">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<?= $item['description_pastryClass'] ?>">
+    </div>
+    <button type="submit">Modifier</button>
+</form>
+
+<?php  elseif($action ='admin' && !empty($items)) : ?>
+ 
+<form action="?action=createPastryClass" method="POST">
+    <div>
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id">
+    </div>
+    <div>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date">
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price">
+    </div>
+    <div>
+        <label for="picture">Photo:</label>
+        <input type="text" id="picture" name="picture">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+    </div>
+    <button type="submit">Ajouter</button>
+</form>
+<?php endif ?>
+
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

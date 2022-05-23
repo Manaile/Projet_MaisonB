@@ -21,7 +21,7 @@
             <td><?= $item['phoneContact'] ?></td>
             <td><?= $item['mailContact'] ?></td>
             <td><?= $item['messageContact'] ?></td>
-            <td><a href=""><i class="bi bi-pencil"></i></a><a href=""><i class="bi bi-trash"></i></a></td>
+            <td><a href="?action=deleteContact&id=<?= $item['id_contact'] ?>"><i class="bi bi-trash"></i></a></td>
         </tr>
         <?php endforeach ?>
     </tbody>

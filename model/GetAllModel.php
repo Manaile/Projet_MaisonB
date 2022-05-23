@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
-ini_set('memory_limit', '2048M');
 error_reporting(E_ALL);
 
 require_once '../database/Database.php';

@@ -18,6 +18,22 @@ class GetController{
        return $this->GetModel->getAdmin($id);
         //var_dump($blop);
     }
+    public function getAdminTeamController($id){
+        return $this->GetModel->getAdminTeam($id);
+         //var_dump($blop);
+     }
+     public function getAdminBakeryController($id){
+        return $this->GetModel->getAdminBakery($id);
+         //var_dump($blop);
+     }
+     public function getAdminPastryController($id){
+        return $this->GetModel->getAdminPastry($id);
+         //var_dump($blop);
+     }
+     public function getAdminPastryClassController($id){
+        return $this->GetModel->getAdminPastryClass($id);
+         //var_dump($blop);
+     }
 }
 
 ?>

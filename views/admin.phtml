@@ -21,7 +21,7 @@
             <td><?= password_hash($item['password'], PASSWORD_DEFAULT) ?></td>
             <td>
                 <a href="?action=get&id=<?= $item['id_admin'] ?>"><i class="bi bi-pencil"></i></a>
-                <a href="?action=delete"><i class="bi bi-trash"></i></a>
+                <a href="?action=delete&id=<?= $item['id_admin'] ?>"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
         <?php endforeach ?>
