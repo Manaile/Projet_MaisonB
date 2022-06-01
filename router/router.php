@@ -265,13 +265,13 @@ error_reporting(E_ALL);
                         return $deleteReviews->deleteAdminReviewsController($id);
                         break;
 
-                        case 'deleteContact':
-                            $deleteContact = new DeleteController();
-                            // si on récupère l'id sélectionné dans l'url alors on lance 
-                            // la méthode qui va ensuite modifier
-                            $id= $_GET['id'];
-                            return $deleteContact->deleteAdminContactController($id);
-                            break;
+                    case 'deleteContact':
+                        $deleteContact = new DeleteController();
+                        // si on récupère l'id sélectionné dans l'url alors on lance 
+                        // la méthode qui va ensuite modifier
+                        $id= $_GET['id'];
+                        return $deleteContact->deleteAdminContactController($id);
+                        break;
     
 
                         

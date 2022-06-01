@@ -90,13 +90,17 @@ h1{
     margin-top: 1em;
     text-decoration:none;
 }
+.button a:hover{
+    background-color:#594A47;
+    color:#fff;
+}
 /******         HOME ARTICLE     ******/
 .article,
 .contact{
     display: flex;
     justify-content: space-between;
     align-content: center;
-    margin: 10em auto 10em auto;
+    margin: 8em auto 8em auto;
 }
 h2{
     margin-bottom: 2em;
@@ -121,7 +125,7 @@ h2{
 }
 .contact{
     position: relative;
-    padding-top: 10em;
+    padding-top: 1em;
 }
 .contact p{
     width: 50%;
@@ -135,7 +139,7 @@ h2{
     content: '';
     position: absolute;
     height: 0;
-    top: 65px;
+    top: -115px;
     left: 998px;
     border-top: 180px solid transparent;
     border-right: 403px solid #ECDEC9;
@@ -211,8 +215,15 @@ h3{
 .card img{
     width: 100%;
 }
-.card .button{
-    margin-bottom: 1.5em;
+.timer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #594a4761;
+}
+.timer>div{
+    margin: 0.5em;
 }
 .gallery{
     display: flex;
@@ -425,7 +436,7 @@ h3{
     grid-column: 2/3;
 }
 
-/******     CONTACTUS / SHOPPINGCART  *****/
+/******     CONTACTUS  *****/
 form div{
     display: flex;
     flex-direction: column;
@@ -496,7 +507,7 @@ iframe{
 }
 .recap img{
     position: absolute;
-    top: 31em;
+    top: 30em;
     left: 47em;
 }
 /***** LEGALDISCLAIMER  ****/
@@ -562,4 +573,37 @@ td{
 .admin i{
     
 }
+/************   ANIMATION    *********/
 
+  /*animation de la gauche vers la droite*/
+  .sliderright-non-active {
+    opacity: 0;
+  }
+  .sliderright-active {
+    opacity: 1;
+    animation-name: sliderright;
+    animation-duration: 4s;
+  }
+  @keyframes sliderright {
+  0% {
+    transform: translate3d(100%,0,0);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+  }
+  .sliderleft-active {
+    opacity: 1;
+    animation-name: sliderleft;
+    animation-duration: 4s;
+  }
+  @keyframes sliderleft {
+  0% {
+    transform: translate3d(-100%,0,0);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+  }

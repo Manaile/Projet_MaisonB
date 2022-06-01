@@ -6,14 +6,14 @@
             <div class="button"><a href="?action=contactUs">Nous contacter</a></div>
         </div>
     </div>
-    <img class="img_right" src="../src/img/cours/cours3.png" alt="photo de notre labo special cours de pâtisserie">
+    <img id="sliderright2" class="img_right" src="../src/img/cours/cours3.png" alt="photo de notre labo special cours de pâtisserie">
 </section>
 <hr>
 <section class="article2">
     <div>
         <h3>Découvrez nos prochaines dates</h3>
         <p>Vous rêvez de faire des desserts comme un vrai chef pâtissier ? Dans une charmante maison du 19ème arrondissement, je vous partage mes meilleurs astuces pour vous aider à comprendre la pâtisserie et découvrir cet univers mystérieux.</p>
-        <p><strong>Si vous êtes un petit groupe d'amis mais que ces dates ne vous conviennent pas, contactez-moi pour convenir d'une autre date ensemble !</strong></p>
+        <p><strong>Si vous êtes un petit groupe d'amis mais que ces dates ne vous conviennent pas, contactez-nous pour convenir d'une autre date ensemble !</strong></p>
     </div>
 </section>
 <section class="cards">
@@ -25,9 +25,12 @@
         <p><strong><?= $item['name_pastryclass'] ?></strong></p>
         <p><?= $item['date_pastryclass'] ?></p>
         <p><?= $item['price_pastryclass'] ?> €</p>
-        <div class="button"><a href="?action=shoppingCart">Reserver</a></div>
+        <div id="<?= $item['name_pastryclass'] ?>" class="timer"></div>
     </div>
-    <?php endforeach ?> 
+    <?php endforeach ?>
+</section>
+<section>
+    <p><small>*venir 30min avant le début de l'atelier pour réserver vos places.</small></p>
 </section>
 <section class="contact">
     <p>Pour toutes demandes, plus de renseignements ou pour nous donnez votre avis, n'hesitez pas à nous envoyez un message.</p>
