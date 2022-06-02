@@ -496,7 +496,7 @@ iframe{
 .address img{
     position: absolute;
     top: 36em;
-    left: 47em;
+    left: 40em;
 }
 
 .recap>div:nth-child(1){
@@ -667,6 +667,9 @@ td{
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+    iframe{
+       width: 350px; 
     }
 }
 @media screen and (min-width: 800px)  and (max-width: 960px){
@@ -861,7 +864,7 @@ td{
         margin: auto 1.2em auto 1.2em;
     }
     iframe{
-        width: 160px;
+        width: 150px;
         height: 200px;
     }
     .address img {
@@ -869,7 +872,7 @@ td{
     }
     .contactUs {
         width: 85%;
-        font-size: 13px;
+        font-size: 12px;
         padding: 0.5em;
     }
     .cards{
