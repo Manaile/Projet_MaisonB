@@ -11,6 +11,7 @@ class CreateModel extends Database{
     }
     public function sendAdmin(){
         //envoyer ce qu'on a besoin
+        
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -19,16 +20,17 @@ class CreateModel extends Database{
                 VALUES
                 (?, ?, ?, ?)
             '
-        );
-
+        ); 
+        $password= password_hash($_POST['password'],PASSWORD_DEFAULT);
+        var_dump($password);
         $query ->execute(
             [$_POST['id'], 
             $_POST['name'], 
             $_POST['mail'], 
-            $_POST['password']]);
+            $password]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
+        var_dump($send);
     }
     public function sendAdminTeam(){
         //envoyer ce qu'on a besoin

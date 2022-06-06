@@ -22,22 +22,25 @@ class LoginModel extends Database{
                     password,
                    name
              FROM admin 
-            WHERE password = ?
+            WHERE email = ?
             '
         );
         
-        $query->execute([$_POST['password']]);
+        $query->execute([$_POST['email']]);
     
         $logAdmin = $query->fetch(PDO::FETCH_ASSOC);
         
-        if($logAdmin && [$logAdmin['password']] === [$_POST['password']] && [$logAdmin['email']] === [$_POST['email']]){
-            $_SESSION['name'] = $logAdmin['name'];
-            $_SESSION['password'] = $logAdmin['password'];
-            $_SESSION['email'] = $logAdmin['email'];
-            //var_dump($_SESSION['name']);
-            header('Location: index.php?action=homeAdmin');
-
-        }else if(!($logAdmin) || [$logAdmin['password']] != [$_POST['password']] || [$logAdmin['email']] != [$_POST['email']]){
+        if($logAdmin && [$logAdmin['email']] === [$_POST['email']]){
+            if(password_verify($_POST['password'], $logAdmin['password'])){
+                $_SESSION['name'] = $logAdmin['name'];
+                $_SESSION['password'] = $logAdmin['password'];
+                $_SESSION['email'] = $logAdmin['email'];
+                header('Location: index.php?action=homeAdmin');
+            }
+            else{
+                return  "erreur de connexion";
+            }
+        }else {
             return  "erreur de connexion";
         }
         

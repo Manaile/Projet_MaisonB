@@ -115,8 +115,10 @@ class GetAllModel extends Database{
             nameContact,
             phoneContact,
             mailContact,
-            messageContact
-    FROM contact'
+            messageContact,
+            messageReviews
+    FROM contact
+    LEFT JOIN reviews ON mailContact=reviews.mailReviews'
         );
 
         $query->execute();
