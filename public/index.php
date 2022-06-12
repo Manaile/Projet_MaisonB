@@ -7,18 +7,16 @@ session_start();
 
 define('ROOT',dirname(__DIR__));
     
-
+//recuperation du Router.php
 require ROOT.'/router/Router.php';
 
-   
-    //instanciation du Router
+//instanciation du Router
 $rout = new Router();
 
-    //instanciation de la  method de la class Router
+//instanciation de la  method de la class Router
 $items = $rout->getController();
-//var_dump( $_SESSION['name'] );
-   //var_dump($items);
-    //inclure l'index.phtml
+
+//page phtml du corps du site
 include ROOT.'/views/index.phtml';
     
 ?>

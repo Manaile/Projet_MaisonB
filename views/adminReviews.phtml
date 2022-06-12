@@ -1,8 +1,10 @@
+                                                <!--  READ & DELETE DE L'ONGLET AVIS -->
 <?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>Les Avis</h2>
 </section>
 <hr>
+<!--  READ DU CRUD -->
 <section class="admin">
 <table>
     <thead>
@@ -21,11 +23,15 @@
             <td><?= $item['phoneReviews'] ?></td>
             <td><?= $item['mailReviews'] ?></td>
             <td><?= $item['messageReviews'] ?></td>
-            <td><a href="?action=deleteReviews&id=<?= $item['id_reviews'] ?>"><i class="bi bi-trash"></i></a></td>
+            <td>
+                <!--  DELETE DU CRUD -->
+                <a href="?action=deleteReviews&id=<?= $item['id_reviews'] ?>"><i class="bi bi-trash"></i></a>
+            </td>
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+<!--  Deconnection  -->
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

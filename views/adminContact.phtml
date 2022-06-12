@@ -1,8 +1,10 @@
+                                                <!--   READ & DELETE DE L'ONGLET MESSAGE  -->
 <?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>Demandes/Renseignements</h2>
 </section>
 <hr>
+<!--  READ DU CRUD -->
 <section class="admin">
 <table>
     <thead>
@@ -23,11 +25,15 @@
             <td><?= $item['mailContact'] ?></td>
             <td><?= $item['messageContact'] ?></td>
             <td><?= $item['messageReviews'] ?></td>
-            <td><a href="?action=deleteContact&id=<?= $item['id_contact'] ?>"><i class="bi bi-trash"></i></a></td>
+            <td>
+                <!--  DELETE DU CRUD -->
+                <a href="?action=deleteContact&id=<?= $item['id_contact'] ?>"><i class="bi bi-trash"></i></a>
+            </td>
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+<!--  Deconnection  -->
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

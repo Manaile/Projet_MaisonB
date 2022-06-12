@@ -1,4 +1,5 @@
-
+//Carrousel d'avis sur la page d'accueil avec la bibliotheque Jquery
+//nombre de slide affichée pour le format desktop
 if(window.innerWidth > 1000){
     $('.reviews').slick({
         
@@ -10,6 +11,7 @@ if(window.innerWidth > 1000){
             arrows:true,
         
     })
+    //nombre de slide affichée pour le format tablette
 }else if( window.innerWidth > 800 && window.innerWidth < 999){
     $('.reviews').slick({
     
@@ -21,6 +23,7 @@ if(window.innerWidth > 1000){
         arrows:true,
       
   })
+  //nombre de slide affichée pour le format mobile
   }else if( window.innerWidth < 799){
     $('.reviews').slick({
     

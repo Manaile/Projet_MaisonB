@@ -1,9 +1,10 @@
+                                            <!--  CRUD DE L'ONGLET  BOULANGERIE -->
 <?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>La Boulangerie</h2>
 </section>
 <hr>
-
+<!--  READ DU CRUD -->
 <section class="admin">
 <table>
     <thead>
@@ -20,6 +21,7 @@
             <td><?= $item['description_bakery'] ?></td>
             <td>
                 <a href="?action=getBakery&id=<?= $item['id_bakery'] ?>"><i class="bi bi-pencil"></i></a>
+                <!--  DELETE DU CRUD -->
                 <a href="?action=deleteBakery&id=<?= $item['id_bakery'] ?>"><i class="bi bi-trash"></i></a>
             </td>  
        </tr>
@@ -28,7 +30,7 @@
 </table>
 
 <?php if ($id=isset($_GET['id']) && !empty($items)): ?>
-
+<!--  UPDATE DU CRUD -->
 <form action="?action=updateBakery" method="POST">
     <div>
         <label for="id">Id:</label>
@@ -46,7 +48,7 @@
 </form>
 
 <?php  elseif($action ='admin' && !empty($items)) : ?>
- 
+  <!--  CREATE DU CRUD -->
 <form action="?action=createBakery" method="POST">
     <div>
         <label for="id">Id:</label>
@@ -63,7 +65,7 @@
     <button type="submit">Ajouter</button>
 </form>
 <?php endif ?>
-
+<!--  Deconnection  -->
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

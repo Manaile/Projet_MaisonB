@@ -1,8 +1,10 @@
+                                            <!--  CRUD DE L'ONGLET ADMIN -->
 <?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
             <h2>Administrateurs</h2>
 </section>
 <hr>
+<!--  READ DU CRUD -->
 <section class="admin">
 <table>
     <thead>
@@ -21,6 +23,7 @@
             <td><?= password_hash($item['password'], PASSWORD_DEFAULT) ?></td>
             <td>
                 <a href="?action=get&id=<?= $item['id_admin'] ?>"><i class="bi bi-pencil"></i></a>
+                <!--  DELETE DU CRUD -->
                 <a href="?action=delete&id=<?= $item['id_admin'] ?>"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
@@ -29,7 +32,7 @@
 </table>
 
 <?php if ($id=isset($_GET['id']) && !empty($items)): ?>
-
+<!--  UPDATE DU CRUD -->
 <form action="?action=update" method="POST">
     <div>
         <label for="id">Id:</label>
@@ -51,7 +54,7 @@
 </form>
 
 <?php  elseif($action ='admin' && !empty($items)) : ?>
- 
+ <!--  CREATE DU CRUD -->
 <form action="?action=create" method="POST">
     <div>
         <label for="name">Id:</label>
@@ -72,7 +75,7 @@
     <button type="submit">Ajouter</button>
 </form>
 <?php endif ?>
-
+<!--  Deconnection  -->
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

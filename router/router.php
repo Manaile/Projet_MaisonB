@@ -6,48 +6,41 @@ error_reporting(E_ALL);
 
    class Router{
         private $action;
+        public $templates;
     
-        
-        public function getController(){
+        public function getController(): array{
             if(isset($_GET['action'])){
                 $action = $_GET['action'];
-
+                // on va gerer les differentes action avec un switch et instancier la methode correspondante
                 switch($action){
-
                     case 'home':
                         $HomeCont = new HomeController();
                         return $HomeCont->showReviews();
-                        //var_dump($blop);
                         break;
 
                     case 'bakery':
                         $BakeryCont = new BakeryController();
                         return  $BakeryCont->showBakeryImg();
-                        //var_dump($blop2);
                         break;
 
                     case 'pastry':
                         $PastryCont = new PastryController();
                         return $PastryCont->showPastryImg();
-                        //var_dump($blop2);
                         break;
                     
                     case 'pastryClass':
                         $PastryClassCont = new PastryCLassController();
                         return $PastryClassCont->showPastryClassCard();
-                        //var_dump($blop2);
                         break;
 
                     case 'aboutUs':
                         $aboutUsCont = new aboutUsController();
                         return $aboutUsCont->showaboutUsImg();
-                        //var_dump($blop2);
                         break;
                     
                     case 'contactUs':
                         $ContactUsCont = new ContactUsController();
                         return $ContactUsCont->getContactUs();
-                        //var_dump($blop2);
                         break;
 
                     case 'legalDisclaimer':
@@ -107,14 +100,14 @@ error_reporting(E_ALL);
 
                     case 'get':
                         $control = new GetController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
+                        // si on récupère l'id sélectionné dans l'url alors on lance la méthode qui va ensuite gerer la modif
                         $id= $_GET['id'];
                         return $control->getAdminController($id);
                         break;
                         
                     case 'update':
                         $update = new UpdateController();
+                        // on recupère les champs modifier
                         $id= $_POST['id'];
                         $name = $_POST['name'];
                         $email = $_POST['mail'];
@@ -124,22 +117,19 @@ error_reporting(E_ALL);
 
                     case 'create':
                         $CreateNewAdmin = new CreateController();
+                        // on gère la suppression grâce à l'id 
                         return $CreateNewAdmin->getAdmin();
-                        //var_dump($blop2);
                         break;
                     
                     case 'delete':
                         $delete = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
+                        // on gère la suppression grâce à l'id 
                         $id= $_GET['id'];
                         return $delete->deleteAdminController($id);
                         break;
                     
                     case 'getTeam':
                         $controlTeam = new GetController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $controlTeam->getAdminTeamController($id);
                         break;
@@ -161,16 +151,12 @@ error_reporting(E_ALL);
 
                     case 'deleteTeam':
                         $deleteTeam = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deleteTeam->deleteAdminTeamController($id);
                         break;
 
                     case 'getBakery':
                         $controlBakery = new GetController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $controlBakery->getAdminBakeryController($id);
                         break;
@@ -190,16 +176,12 @@ error_reporting(E_ALL);
 
                     case 'deleteBakery':
                         $deleteBakery = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deleteBakery->deleteAdminBakeryController($id);
                         break;
 
                     case 'getPastry':
                         $controlPastry = new GetController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $controlPastry->getAdminPastryController($id);
                         break;
@@ -219,16 +201,12 @@ error_reporting(E_ALL);
 
                     case 'deletePastry':
                         $deletePastry = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deletePastry->deleteAdminPastryController($id);
                         break;
 
                     case 'getPastryClass':
                         $controlPastryClass = new GetController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $controlPastryClass->getAdminPastryClassController($id);
                         break;
@@ -251,46 +229,38 @@ error_reporting(E_ALL);
 
                     case 'deletePastryClass':
                         $deletePastryClass = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deletePastryClass->deleteAdminPastryClassController($id);
                         break;
 
                     case 'deleteReviews':
                         $deleteReviews = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deleteReviews->deleteAdminReviewsController($id);
                         break;
 
                     case 'deleteContact':
                         $deleteContact = new DeleteController();
-                        // si on récupère l'id sélectionné dans l'url alors on lance 
-                        // la méthode qui va ensuite modifier
                         $id= $_GET['id'];
                         return $deleteContact->deleteAdminContactController($id);
                         break;
     
-
-                        
-    
                         
             }}
             else if(!isset($_GET['action'])){
+                //si aucun chemin n'est selectionner envoie vers la page d'accueil
                 $HomeCont = new HomeController();
                 return $HomeCont->showReviews();
             }
             else{
-                //envoie vars la page d'erreur 404 !!
+                //si aucun chemin ne correspond envoie vers la page d'erreur 404 !!
                 $error404 = new error404Controller();
                 return $error404->showError404();
             }
            
         }
     }
-
+//En fonction de l'action on va recuperer le controller correspondant et donner une "valeur" à la variable templates
     if(!isset($_GET['action']) || empty($_GET['action']) || $_GET['action']=="home"){
         include_once('../controller/HomeController.php');
         $template = 'home';

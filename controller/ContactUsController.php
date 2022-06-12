@@ -14,7 +14,6 @@ class ContactUsController{
 
     public function getContactUs(){
        return $this->ContactUsModel->sendContactUs();
-        //var_dump($blop);
     }
 }
 

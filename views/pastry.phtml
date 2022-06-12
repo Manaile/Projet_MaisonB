@@ -1,4 +1,4 @@
-
+                                                    <!--  PAGE PATISSERIE -->
 <section class="banner pastry_banner">
     <div>
         <h2>LA PATISSERIE</h2>
@@ -17,6 +17,7 @@
         <p><strong> Pour quelles créations allez-vous succomber ?</strong></p>
     </div>
 </section>
+ <!--  resuperation des images 'id,url et description' dans la bdd avec la vaiable $items -->
 <section class="grid_pastry">
     <?php foreach($items as $item): ?>
         <img class="img<?= $item['id_pastry'] ?> gallery__img" src="<?= $item['url_pastry'] ?>" alt="<?= $item['description_pastry'] ?>">

@@ -1,9 +1,9 @@
 <?php
-
+                                                //MODEL DE LA PAGE D'ACCUEIL
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
-
+//recuperation de la bdd
 require_once '../database/Database.php';
 
 class HomeModel extends Database{

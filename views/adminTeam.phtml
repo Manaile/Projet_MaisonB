@@ -1,8 +1,10 @@
+                                                <!--   CRUD DE L'ONGLET L'EQUIPE -->
 <?php if (isset($_SESSION['name'])): ?>
 <section class="banner">
-            <h2>L'Équipe Maison B</h2>
+    <h2>L'Équipe Maison B</h2>
 </section>
 <hr>
+<!--  READ DU CRUD -->
 <section class="admin">
 <table>
     <thead>
@@ -23,6 +25,7 @@
             <td><?= $item['description_about'] ?></td>
             <td>
                 <a href="?action=getTeam&id=<?= $item['id_about'] ?>"><i class="bi bi-pencil"></i></a>
+                <!--  DELETE DU CRUD -->
                 <a href="?action=deleteTeam&id=<?= $item['id_about'] ?>"><i class="bi bi-trash"></i></a>
             </td>        
         </tr>
@@ -31,7 +34,7 @@
 </table>
 
 <?php if ($id=isset($_GET['id']) && !empty($items)): ?>
-
+<!--  UPDATE DU CRUD -->
 <form action="?action=updateTeam" method="POST">
     <div>
         <label for="id">Id:</label>
@@ -57,7 +60,7 @@
 </form>
 
 <?php  elseif($action ='admin' && !empty($items)) : ?>
- 
+<!--  CREATE DU CRUD -->
 <form action="?action=createTeam" method="POST">
     <div>
         <label for="id">Id:</label>
@@ -82,7 +85,7 @@
     <button type="submit">Ajouter</button>
 </form>
 <?php endif ?>
-
+<!--  Deconnection  -->
 <p>N'oubliez pas de vous <a href="?action=logout">Déconnecter</a></p>
 </section>
 <?php else: ?>

@@ -29,7 +29,6 @@ class ContactUsModel extends Database{
             $_POST['message']]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
     }
     else if(!empty($_POST) && $_POST['choice']=="1"){
         $query = $this->pdo->prepare(
