@@ -1,8 +1,10 @@
 <?php
+                                        /*MODEL DE LA PAGE 'ATELIER' */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+/*recupere la connexion à la bdd*/
 require_once '../database/Database.php';
 
 class PastryClassModel extends Database{
@@ -10,7 +12,7 @@ class PastryClassModel extends Database{
         parent::__construct();
     }
     public function getPastryClassCard(){
-        //recup ce qu'on a besoin
+        //petite requête SELECT vous êtes habitués de la voir hein.. on récupère url,nom,description,date,prix des ateliers
         $query = $this->pdo->prepare
         (
             'SELECT url_pastryclass,
@@ -23,8 +25,7 @@ class PastryClassModel extends Database{
 
         $query->execute();
         $pastryClassCard = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($pastryClassCard);
-        return $pastryClassCard;
+        return $pastryClassCard; //on récupère ça dans notre variable..
     }
    
 }

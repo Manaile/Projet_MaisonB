@@ -1,16 +1,18 @@
 <?php
+                                        /*MODEL DE LA PAGE 'QUI SOMMES NOUS' */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-require_once '../database/Database.php';
+/*recupere la connexion à la bdd*/
+require_once '../database/Database.php'; 
 
 class AboutUsModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getAboutUsImg(){
-        //recup ce qu'on a besoin
+    public function getAboutUsImg(): array{
+        //petite requête sympatoche pour récuperer url,nom,description et poste de l'équipe.
         $query = $this->pdo->prepare
         (
             'SELECT url_about,
@@ -22,8 +24,8 @@ class AboutUsModel extends Database{
 
         $query->execute();
         $AboutUsImg = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($AboutUsImg);
         return $AboutUsImg;
+        //on récupère tt ce petit beau monde dans notre variable..
     }
    
 }

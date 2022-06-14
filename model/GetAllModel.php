@@ -1,16 +1,18 @@
 <?php
+                                        /*MODEL DU READ POUR LE CRUD */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+/*recupere la connexion à la bdd*/
 require_once '../database/Database.php';
 
 class GetAllModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getAllAdmin(){
-        //recup ce qu'on a besoin
+    public function getAllAdmin(): array{
+        //un SELECT classique pour read les admins
         $query = $this->pdo->prepare
     (
     'SELECT id_admin,
@@ -22,11 +24,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllAdmin = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllAdmin;
     }
-    public function getAllAbout(){
-        //recup ce qu'on a besoin
+    public function getAllAbout(): array{
+        //un SELECT classique pour read l'equipe'
         $query = $this->pdo->prepare
     (
     'SELECT id_about,
@@ -39,11 +40,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllAbout = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllAbout;
     }
-    public function getAllBakery(){
-        //recup ce qu'on a besoin
+    public function getAllBakery(): array{
+        //un SELECT classique pour read la boulangerie
         $query = $this->pdo->prepare
     (
     'SELECT id_bakery,
@@ -54,11 +54,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllBakery = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllBakery;
     }
-    public function getAllPastry(){
-        //recup ce qu'on a besoin
+    public function getAllPastry(): array{
+        //un SELECT classique pour read la patisserie
         $query = $this->pdo->prepare
     (
     'SELECT id_pastry,
@@ -69,11 +68,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllPastry = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllPastry;
     }
-    public function getAllClass(){
-        //recup ce qu'on a besoin
+    public function getAllClass(): array{
+        //un SELECT classique pour read les ateliers
         $query = $this->pdo->prepare
     (
     'SELECT id_pastryClass,
@@ -87,11 +85,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllClass = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllClass;
     }
-    public function getAllReviews(){
-        //recup ce qu'on a besoin
+    public function getAllReviews(): array{
+        //un SELECT classique pour read les avis
         $query = $this->pdo->prepare
     (
     'SELECT id_reviews,
@@ -104,11 +101,10 @@ class GetAllModel extends Database{
 
         $query->execute();
         $getAllReviews = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllReviews;
     }
-    public function getAllContact(){
-        //recup ce qu'on a besoin
+    public function getAllContact(): array{
+        //un SELECT avec LEFT JOIN pour read tt les messages reçu
         $query = $this->pdo->prepare
     (
     'SELECT id_contact,
@@ -120,13 +116,9 @@ class GetAllModel extends Database{
     FROM contact
     LEFT JOIN reviews ON mailContact=reviews.mailReviews'
         );
-
         $query->execute();
         $getAllContact = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($get);
         return $getAllContact;
     }
-   
 }
-
 ?>

@@ -71,7 +71,7 @@ if(t2<0){
 }, 1000);
 
 
-/* gerer l'affichage du troisième compte à rebours*/
+/* fixer la date de fin du troisieme atelier*/
 let deadline3 = new Date("Jul 29, 2022 19:00:00").getTime();
 
 /*calculer la différence entre la date actuelle et la date de fin*/
@@ -81,6 +81,7 @@ let t3 = deadline3 - now;
 let days = Math.floor(t3/(1000*60*60*24));
 let hours = Math.floor((t3%(1000*60*60*24))/(1000*60*60));
 let minutes = Math.floor((t3%(1000*60*60))/(1000*60));
+let seconds = Math.floor((t3%(1000*60))/1000);
 
 /* gerer l'affichage du troisième compte à rebours*/
 document.getElementById("Atelier Macarons").innerHTML =
@@ -89,7 +90,7 @@ document.getElementById("Atelier Macarons").innerHTML =
 "<div><strong>"+minutes+"<br/>"+"<span>minute(s) </span></div></strong>"+
 "<div><strong>"+seconds+"<br/>"+"<span>seconde(s) </span></div></strong>";
 
-/* gerer l'affichage du message à la fin */ 
+/* gerer l'affichage du message à la fin*/ 
 if(t3<0){
     clearInterval(x);
     document.getElementById("Atelier Macarons").innerHTML ="DATE EXPIREE";

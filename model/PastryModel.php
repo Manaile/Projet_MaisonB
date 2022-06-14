@@ -1,16 +1,18 @@
 <?php
+                                        /*MODEL DE LA PAGE 'PATISSERIE' */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+/*recupere la connexion à la bdd*/
 require_once '../database/Database.php';
 
 class PastryModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getPastryImg(){
-        //recup ce qu'on a besoin
+    public function getPastryImg(): array{
+        //what?! encore un SELECT! bon récupère de la bdd id,url et description de la table patisserie
         $query = $this->pdo->prepare
         (
             'SELECT id_pastry,
@@ -21,10 +23,7 @@ class PastryModel extends Database{
 
         $query->execute();
         $pastryImg = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($bakeryImg);
-        return $pastryImg;
+        return $pastryImg;//on récupère les bonnes patisserie dans notre variable..
     }
-   
 }
-
 ?>

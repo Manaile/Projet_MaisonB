@@ -1,16 +1,19 @@
 <?php
+                                        /*MODEL DU GET POUR LE CRUD */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+/*recupere la connexion à la bdd*/
 require_once '../database/Database.php';
 
 class GetModel extends Database{
     public function __construct(){
         parent::__construct();
     }
-    public function getAdmin($id){
-        //recup ce qu'on a besoin
+    public function getAdmin($id): array{
+        //Ouuh un SELECT un peu plus complexe.. vous voulez des explictions? Let's go!
+        //c'est un SELECT ou on chope en fonction de l'id qui est récupéré avec le GET!
         $id= array($_GET['id']);
         $query = $this->pdo->prepare
     (
@@ -21,15 +24,13 @@ class GetModel extends Database{
         FROM admin 
         WHERE id_admin = ?', [$id]
     );
-
-        //;
         $query->execute($id);
         $getAdmin = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($getAdmin);
-        return $getAdmin;
+        return $getAdmin;//on récupère ça dans notre variable..
     }
-    public function getAdminTeam($id){
-        //recup ce qu'on a besoin
+
+    public function getAdminTeam($id): array{
+        //c'est la meme chose qu'au dessus
         $id= array($_GET['id']);
         $query = $this->pdo->prepare
     (
@@ -41,15 +42,12 @@ class GetModel extends Database{
         FROM about_gallery 
         WHERE id_about = ?', [$id]
     );
-
-        //;
         $query->execute($id);
         $getAdminTeam = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($getAdminTeam);
         return $getAdminTeam;
     }
-    public function getAdminBakery($id){
-        //recup ce qu'on a besoin
+    public function getAdminBakery($id): array{
+        //c'est la meme chose chez le voisin du premier
         $id= array($_GET['id']);
         $query = $this->pdo->prepare
     (
@@ -60,14 +58,12 @@ class GetModel extends Database{
         WHERE id_bakery = ?', [$id]
     );
 
-        //;
         $query->execute($id);
         $getAdminBakery = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($getAdminTeam);
         return $getAdminBakery;
     }
-    public function getAdminPastry($id){
-        //recup ce qu'on a besoin
+    public function getAdminPastry($id): array{
+        //c'est la meme chose chez le voisin du premier
         $id= array($_GET['id']);
         $query = $this->pdo->prepare
     (
@@ -78,14 +74,12 @@ class GetModel extends Database{
         WHERE id_pastry = ?', [$id]
     );
 
-        //;
         $query->execute($id);
         $getAdminPastry = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($getAdminTeam);
         return $getAdminPastry;
     }
     public function getAdminPastryClass($id){
-        //recup ce qu'on a besoin
+        //on copie sur le voisin d'en haut!
         $id= array($_GET['id']);
         $query = $this->pdo->prepare
     (
@@ -98,14 +92,10 @@ class GetModel extends Database{
         FROM pastryclass_gallery 
         WHERE id_pastryClass = ?', [$id]
     );
-
-        //;
         $query->execute($id);
         $getAdminPastry = $query->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($getAdminTeam);
         return $getAdminPastry;
     }
 }
-
 
 ?>

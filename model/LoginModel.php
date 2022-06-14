@@ -1,9 +1,10 @@
 <?php
+                                        /* MODEL DE LA PAGE 'LOGIN' */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
-
+//recuperation de la bdd
 require_once '../database/Database.php';
 
 class LoginModel extends Database{
@@ -12,7 +13,8 @@ class LoginModel extends Database{
     }
     public function logAdmin(){
         
-       // envoyer ce qu'on a besoin
+       //une sublime requête pour verifier si le mail et le mot de pass exist
+       //avec le select on recupere ce qu'il y a dans la bdd
         if(!empty($_POST)){
             $email= $_POST['email'];
 
@@ -30,18 +32,18 @@ class LoginModel extends Database{
     
         $logAdmin = $query->fetch(PDO::FETCH_ASSOC);
         
-        if($logAdmin && [$logAdmin['email']] === [$_POST['email']]){
-            if(password_verify($_POST['password'], $logAdmin['password'])){
+        if($logAdmin && [$logAdmin['email']] === [$_POST['email']]){ //premiere filtre avec le mail check
+            if(password_verify($_POST['password'], $logAdmin['password'])){ //second filtre pour verifier si le mot de pass est correct
                 $_SESSION['name'] = $logAdmin['name'];
                 $_SESSION['password'] = $logAdmin['password'];
                 $_SESSION['email'] = $logAdmin['email'];
-                header('Location: index.php?action=homeAdmin');
+                header('Location: index.php?action=homeAdmin'); //redirection vers la page d'accueil du coté admin, le coté VIP
             }
             else{
-                return  "erreur de connexion";
+                return  "erreur de connexion"; //si le password est mauvais... biiiip message d'erreur c'est raté ! try again
             }
         }else {
-            return  "erreur de connexion";
+            return  "erreur de connexion"; //si le mail est mauvais... biiiip message d'erreur c'est raté ! try again
         }
         
     }

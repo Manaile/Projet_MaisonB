@@ -1,8 +1,10 @@
 <?php
+                                        /*MODEL DU CREATE POUR LE CRUD */
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
+/*recupere la connexion à la bdd*/
 require_once '../database/Database.php';
 
 class CreateModel extends Database{
@@ -10,8 +12,7 @@ class CreateModel extends Database{
         parent::__construct();
     }
     public function sendAdmin(){
-        //envoyer ce qu'on a besoin
-        
+        //requete INSERT INTO pour remplir la bdd depuis la page admin
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -22,7 +23,6 @@ class CreateModel extends Database{
             '
         ); 
         $password= password_hash($_POST['password'],PASSWORD_DEFAULT);
-        var_dump($password);
         $query ->execute(
             [$_POST['id'], 
             $_POST['name'], 
@@ -30,10 +30,9 @@ class CreateModel extends Database{
             $password]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        var_dump($send);
     }
     public function sendAdminTeam(){
-        //envoyer ce qu'on a besoin
+        //requete INSERT INTO pour remplir la bdd depuis la page admin equipe
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -52,10 +51,9 @@ class CreateModel extends Database{
             $_POST['description']]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
     }
     public function sendAdminBakery(){
-        //envoyer ce qu'on a besoin
+        //requete INSERT INTO pour remplir la bdd depuis la page admin boulangerie
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -65,17 +63,15 @@ class CreateModel extends Database{
                 (?, ?, ?)
             '
         );
-
         $query ->execute(
             [$_POST['id'], 
             $_POST['picture'],
             $_POST['description']]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
     }
     public function sendAdminPastry(){
-        //envoyer ce qu'on a besoin
+        //requete INSERT INTO pour remplir la bdd depuis la page admin patisserie
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -85,17 +81,15 @@ class CreateModel extends Database{
                 (?, ?, ?)
             '
         );
-
         $query ->execute(
             [$_POST['id'], 
             $_POST['picture'],
             $_POST['description']]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
     }
     public function sendAdminPastryClass(){
-        //envoyer ce qu'on a besoin
+        //requete INSERT INTO pour remplir la bdd depuis la page admin atelier
             $query = $this->pdo->prepare(
             '
                 INSERT INTO
@@ -105,7 +99,6 @@ class CreateModel extends Database{
                 (?, ?, ?, ?, ?, ?)
             '
         );
-
         $query ->execute(
             [$_POST['id'], 
             $_POST['picture'],
@@ -115,7 +108,6 @@ class CreateModel extends Database{
             $_POST['price']]);
         $send = $query->fetch(PDO::FETCH_ASSOC);
         return $send;
-        //var_dump($send);
         }
 }
 
