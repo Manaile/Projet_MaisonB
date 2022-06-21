@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit AboutUsModel*/
-require '../model/AboutUsModel.php';
+require './model/AboutUsModel.php';
 
 class AboutUsController{
     private $PastryModel;

@@ -261,201 +261,201 @@ error_reporting(E_ALL);
 //En fonction de l'action on va trouver le controller correspondant et donner une "valeur" à la variable $templates
  // si le client veut la page d'accueil, ne demande rien ou si aucune action est assigné on trouve le controller et on affiche la page d'accueil
     if(!isset($_GET['action']) || empty($_GET['action']) || $_GET['action']=="home"){
-        include_once('../controller/HomeController.php');
+        include_once('./controller/HomeController.php');
         $template = 'home';
     }
     // si le client veut la page boulangerie, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="bakery"){
-        include_once('../controller/BakeryController.php');
+        include_once('./controller/BakeryController.php');
         $template = 'bakery';
     }
     // si le client veut la page patisserie, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="pastry"){
-        include_once('../controller/PastryController.php');
+        include_once('./controller/PastryController.php');
         $template = 'pastry';
     }
     // si le client veut la page atelier, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="pastryClass"){
-        include_once('../controller/PastryClassController.php');
+        include_once('./controller/PastryClassController.php');
         $template = 'pastryClass';
     }
     // si le client veut la page qui sommes nous, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="aboutUs"){ 
-        include_once('../controller/AboutUsController.php');
+        include_once('./controller/AboutUsController.php');
         $template = 'aboutUs';
     }
     // si le client veut la page nous contacter, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="contactUs"){
-        include_once('../controller/ContactUsController.php');
+        include_once('./controller/ContactUsController.php');
         $template = 'contactUs';
     }
     // si le client veut la page mention legale, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="legalDisclaimer"){
-        include_once('../controller/legalDisclaimerController.php');
+        include_once('./controller/legalDisclaimerController.php');
         $template = 'legalDisclaimer';
     }
     // si le client veut la page connexion, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="login"){
-        include_once('../controller/LoginController.php');
+        include_once('./controller/LoginController.php');
         $template = 'login';
     }
     // si l'admin' veut la paged'accueil admin, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="homeAdmin"){
-        include_once('../controller/LoginController.php');
+        include_once('./controller/LoginController.php');
         $template = 'homeAdmin';
     }
     // si l'admin' veut la page table admin, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="admin"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'admin';
     }
     // si l'admin' veut la page table equipe, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminTeam"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminTeam';
     }
     // si l'admin' veut la page table boulangerie, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminBakery"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminBakery';
     }
     // si l'admin' veut la page table patisserie, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminPastry"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminPastry';
     }
     // si l'admin' veut la page table atelier, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminClass"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminClass';
     }
     // si l'admin' veut la page table avis, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminReviews"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminReviews';
     }
     // si l'admin' veut la page table message, on trouve le controller et on affiche la bonne page
     else if($_GET['action']=="adminContact"){
-        include_once('../controller/GetAllController.php');
+        include_once('./controller/GetAllController.php');
         $template = 'adminContact';
     }
     // si l'admin veut se deconnecter on trouve le controller et on affiche la page login
     else if($_GET['action']=="logout"){
-        include_once('../controller/LogoutController.php');
+        include_once('./controller/LogoutController.php');
         $template = 'login';
     }
     // si l'admin veut viser une ligne on trouve le controller et on affiche la page
     else if($_GET['action']=="get"){
-        include_once('../controller/GetController.php');
+        include_once('./controller/GetController.php');
         $template = 'admin';
     }
     // si l'admin veut modifier une ligne on trouve le controller et on affiche la page
     else if($_GET['action']=="update"){
-        include_once('../controller/UpdateController.php');
+        include_once('./controller/UpdateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut creer une ligne on trouve le controller et on affiche la page
     else if($_GET['action']=="create"){
-        include_once('../controller/CreateController.php');
+        include_once('./controller/CreateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne on trouve le controller et on affiche la page
     else if($_GET['action']=="delete"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut viser une ligne equipe on trouve le controller et on affiche la page
     else if($_GET['action']=="getTeam"){
-        include_once('../controller/GetController.php');
+        include_once('./controller/GetController.php');
         $template = 'adminTeam';
     }
     // si l'admin veut modifier une ligne equipe on trouve le controller et on affiche la page
     else if($_GET['action']=="updateTeam"){
-        include_once('../controller/UpdateController.php');
+        include_once('./controller/UpdateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut creer une ligne equipe on trouve le controller et on affiche la page
     else if($_GET['action']=="createTeam"){
-        include_once('../controller/CreateController.php');
+        include_once('./controller/CreateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne equipe on trouve le controller et on affiche la page
     else if($_GET['action']=="deleteTeam"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut viser une ligne boulangerie on trouve le controller et on affiche la page
     else if($_GET['action']=="getBakery"){
-        include_once('../controller/GetController.php');
+        include_once('./controller/GetController.php');
         $template = 'adminBakery';
     }
     // si l'admin veut modifier une ligne bouangerie on trouve le controller et on affiche la page
     else if($_GET['action']=="updateBakery"){
-        include_once('../controller/UpdateController.php');
+        include_once('./controller/UpdateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut creer une ligne boulangerie on trouve le controller et on affiche la page
     else if($_GET['action']=="createBakery"){
-        include_once('../controller/CreateController.php');
+        include_once('./controller/CreateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne boulangerie on trouve le controller et on affiche la page
     else if($_GET['action']=="deleteBakery"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut viser une ligne patisserie on trouve le controller et on affiche la page
     else if($_GET['action']=="getPastry"){
-        include_once('../controller/GetController.php');
+        include_once('./controller/GetController.php');
         $template = 'adminPastry';
     }
     // si l'admin veut modifier une ligne patisserie on trouve le controller et on affiche la page
     else if($_GET['action']=="updatePastry"){
-        include_once('../controller/UpdateController.php');
+        include_once('./controller/UpdateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut creer une ligne patisserie on trouve le controller et on affiche la page
     else if($_GET['action']=="createPastry"){
-        include_once('../controller/CreateController.php');
+        include_once('./controller/CreateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne patisserie on trouve le controller et on affiche la page
     else if($_GET['action']=="deletePastry"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut viser une ligne atelier on trouve le controller et on affiche la page
     else if($_GET['action']=="getPastryClass"){
-        include_once('../controller/GetController.php');
+        include_once('./controller/GetController.php');
         $template = 'adminClass';
     }
     // si l'admin veut modifier une ligne atelier on trouve le controller et on affiche la page
     else if($_GET['action']=="updatePastryClass"){
-        include_once('../controller/UpdateController.php');
+        include_once('./controller/UpdateController.php');
         $template = 'homeAdmin';
     }// si l'admin veut creer une ligne atelier on trouve le controller et on affiche la page
     else if($_GET['action']=="createPastryClass"){
-        include_once('../controller/CreateController.php');
+        include_once('./controller/CreateController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne atelier on trouve le controller et on affiche la page
     else if($_GET['action']=="deletePastryClass"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne avis on trouve le controller et on affiche la page
     else if($_GET['action']=="deleteReviews"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si l'admin veut supprimer une ligne message on trouve le controller et on affiche la page
     else if($_GET['action']=="deleteContact"){
-        include_once('../controller/DeleteController.php');
+        include_once('./controller/DeleteController.php');
         $template = 'homeAdmin';
     }
     // si le client fait une demande inéxistante on affiche la page erreur 404
     else{
-        include_once('../controller/error404Controller.php');
+        include_once('./controller/error404Controller.php');
         $template = 'error404';
     }
 ?>

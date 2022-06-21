@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 //recuperation de la bdd
-require_once '../database/Database.php';
+require_once './database/Database.php';
 
 class LoginModel extends Database{
     public function __construct(){

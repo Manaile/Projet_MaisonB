@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit UpdateModel*/
-require '../model/UpdateModel.php';
+require './model/UpdateModel.php';
 
 class UpdateController{
     private $UpdateModel;

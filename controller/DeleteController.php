@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit DeleteModel*/
-require '../model/DeleteModel.php';
+require './model/DeleteModel.php';
 
 class DeleteController{
     private $GetModel;

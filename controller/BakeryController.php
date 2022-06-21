@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit BakeryModel*/
-require '../model/BakeryModel.php';
+require './model/BakeryModel.php';
 
 class BakeryController{
     private $BakeryModel;

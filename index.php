@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 session_start();
 
-define('ROOT',dirname(__DIR__));
+//define('ROOT',dirname(__DIR__));
     
 //recuperation du Router.php
-require ROOT.'/router/Router.php';
+require './router/Router.php';
 
 //instanciation du Router
 $rout = new Router();
@@ -17,6 +17,6 @@ $rout = new Router();
 $items = $rout->getController();
 
 //page phtml du corps du site
-include ROOT.'/views/index.phtml';
+include './views/index.phtml';
     
 ?>

@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit HomeModel*/
-require '../model/HomeModel.php';
+require './model/HomeModel.php';
 
 class HomeController{
     private $HomeModel;

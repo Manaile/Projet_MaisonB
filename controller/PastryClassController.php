@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit PastryClassModel*/
-require '../model/PastryClassModel.php';
+require './model/PastryClassModel.php';
 
 class PastryClassController{
     private $PastryClassModel;

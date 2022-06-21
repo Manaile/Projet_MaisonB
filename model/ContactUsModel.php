@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere la connexion à la bdd*/
-require_once '../database/Database.php';
+require_once './database/Database.php';
 
 class ContactUsModel extends Database{
     public function __construct(){

@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre LoginModel*/
-require '../model/LoginModel.php';
+require './model/LoginModel.php';
 
 class LoginController{
     private $LoginModel;

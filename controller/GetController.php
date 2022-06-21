@@ -5,7 +5,7 @@ ini_set('display_startup_errors','1');
 error_reporting(E_ALL);
 
 /*recupere notre petit GetModel*/
-require '../model/GetModel.php';
+require './model/GetModel.php';
 
 class GetController{
     private $GetModel;
