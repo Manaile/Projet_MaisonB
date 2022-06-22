@@ -1,4 +1,15 @@
-                    /* activer les animations CSS des photos avec du js pur au load de la page */
+                                 /* burger menu pour la version mobile et tablette */
+/* Sélection des éléments HTML */
+let burgerLink = document.getElementById('burgerLink')
+let burger = document.getElementById('burger')
+let navbar = document.getElementById('navbar')
+
+burgerLink.addEventListener('click', function(e) {
+    e.preventDefault()
+    burger.classList.toggle('open')
+    navbar.classList.toggle('open')
+  })
+                                /* activer les animations CSS des photos avec du js pur au load de la page */
 
 document.addEventListener('DOMContentLoaded', function() {
    document.getElementById('sliderright').classList.add('sliderright-active');

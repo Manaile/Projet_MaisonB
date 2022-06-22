@@ -8,7 +8,7 @@
             <div class="button"><a href="?action=contactUs">Nous contacter</a></div>
         </div>
     </div>
-    <img id="sliderright" src="./src/img/pain/pain17.png" alt="photo de différents pains">
+    <img id="sliderright" src="./src/img/pain/pain17.png" alt="photo de différents pains" title="nos pains création maisonb">
 </section>
 <hr>
 <section class="article2">
@@ -21,7 +21,7 @@
  <!--  resuperation des images 'id,url et description' dans la bdd avec la vaiable $items -->
 <section class="grid_bakery">
     <?php foreach($items as $item): ?>
-        <img class="img<?= $item['id_bakery'] ?> gallery__img" src="<?= $item['url_bakery'] ?>" alt="<?= $item['description_bakery'] ?>">
+        <img class="img<?= $item['id_bakery'] ?> gallery__img" src="<?= $item['url_bakery'] ?>" alt="<?= $item['description_bakery'] ?>" title="<?= $item['description_bakery'] ?>">
     <?php endforeach ?>
 </section>
 <section class="contact">

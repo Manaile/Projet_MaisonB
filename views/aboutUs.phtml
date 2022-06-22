@@ -7,7 +7,7 @@
             <div class="button"><a href="?action=contactUs">Nous contacter</a></div>
         </div>
     </div>
-    <img id="sliderright3" class="img_right" src="./src/img/equipe/equipe1.jpg" alt="photo de la boulangerie dans les années 60.">
+    <img id="sliderright3" class="img_right" src="./src/img/equipe/equipe1.jpg" alt="photo de la boulangerie dans les années 60." title="l'équipe maisonb en 1960">
 </section>
 <hr>
 <section class="article2">
@@ -21,7 +21,7 @@
 <section class="gallery">
         <?php foreach($items as $item): ?>
         <figure>
-            <img src="<?= $item['url_about'] ?>" alt="<?= $item['description_about'] ?>">
+            <img src="<?= $item['url_about'] ?>" alt="<?= $item['description_about'] ?>" title="<?= $item['description_about'] ?>">
             <figcaption>
                 <div><strong><?= $item['name_about'] ?></strong>
                 <p><?= $item['profession_about'] ?></p>

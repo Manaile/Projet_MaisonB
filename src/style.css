@@ -673,16 +673,64 @@ td{
 }
 @media screen and (min-width: 800px)  and (max-width: 960px){
       /******         HEADER      ******/
-    .header {
-        flex-direction: column;
-    }
-    .navbar, .header {
+    .header,.navbar {
         flex-direction: column;
         padding-left: 0;
     }
+    .navbar { 
+    display: none;
+    width:100%;
+    left:0;
+    top:100%;
+    padding:10px 0;
+    transform:scaleY(0);
+    transform-origin:center top;
+    transition:all 0.3s ease;
+    }
     .navbar li {
         padding: 0.3em;
+        text-align: center;
     }
+    #burger { /*barre centrale du burger menu*/
+        width:30px;
+        height:2px;
+        background:#594A47;
+        display:inline-block;
+        position:relative;
+      }
+      #burger::before,
+      #burger::after { /* on ajoute les deux barres avec before et after */
+        content:'';
+        width:30px;
+        height:2px;
+        background:#594A47;
+        display:inline-block;
+        position:absolute;
+        transform-origin: center;
+        transition: all 0.3s ease;
+      }
+      #burger::before { /* on leurs donne une positon */
+        top:-7px;
+      }
+      #burger::after {
+        top:7px;
+      }
+      #burger.open {
+        background:transparent; /* la barre du milieu disparait */
+      }
+      /* celles du haut et du bas s'inclinent pour former une croix */
+      #burger.open::before {
+        transform: rotate(45deg); 
+        top:0;
+      }
+      #burger.open::after {
+        transform: rotate(-45deg);
+        top:0;
+      }
+      .navbar.open {  /*on affiche la navbar*/
+        display: block;
+        transform:scaleY(1);
+      }
     /******         FOOTER      ******/
     
     .footer>div{
@@ -772,16 +820,63 @@ td{
     }
   }
   @media (max-width: 800px){
-    .header {
+    .header, .navbar{
         flex-direction: column;
-        padding-left: 0;
     }
-    .navbar, .header {
-        flex-direction: column;
-        padding-left: 0;
+    .navbar { 
+        display: none;
+        width:100%;
+        left:0;
+        top:100%;
+        padding:10px 0;
+        transform:scaleY(0);
+        transform-origin:center top;
+        transition:all 0.3s ease;
+        }
+    
+    #burger { /*barre centrale du burger menu*/
+        width:30px;
+        height:2px;
+        background:#594A47;
+        display:inline-block;
+        position:relative;
+        }
+    #burger::before,
+    #burger::after { /* on ajoute les deux barres avec before et after */
+    content:'';
+    width:30px;
+    height:2px;
+    background:#594A47;
+    display:inline-block;
+    position:absolute;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    }
+    #burger::before { /* on leurs donne une positon */
+    top:-7px;
+    }
+    #burger::after {
+    top:7px;
+    }
+    #burger.open {
+    background:transparent; /* la barre du milieu disparait */
+    }
+    /* celles du haut et du bas s'inclinent pour former une croix */
+    #burger.open::before {
+    transform: rotate(45deg); 
+    top:0;
+    }
+    #burger.open::after {
+    transform: rotate(-45deg);
+    top:0;
+    }
+    .navbar.open {  /*on affiche la navbar*/
+        display: block;
+        transform:scaleY(1);
     }
     .navbar li {
         padding: 0.3em;
+        text-align: center;
     }
     /******         FOOTER      ******/
     
@@ -872,10 +967,13 @@ td{
     .address img {
         display: none;
     }
-    .contactUs {
+    .contactUs{
         width: 85%;
         font-size: 12px;
         padding: 0.5em;
+    }
+    .address a{
+        word-break: break-all;
     }
     .cards{
         flex-direction: column;

@@ -22,9 +22,10 @@
 <body>
 <!-- balise header = en-tête du site -->
     <header class="header">
-        <a href="?action=home"><img src="./src/img/logo.png" alt="logo de la boulangerie/pâtisserie" width='300px'></a>
+        <a href="?action=home"><img src="./src/img/logo.png" alt="logo de la boulangerie/pâtisserie" title="logo maisonb" width='300px'></a>
         <nav>
-            <ul class="navbar index">
+            <a id="burgerLink" href="#"><span id="burger"></span></a>
+            <ul id="navbar" class="navbar index">
                 <li><a href="?action=bakery">Boulangerie</a></li>
                 <li><a href="?action=pastry">Pâtisserie</a></li>
                 <li><a href="?action=pastryClass">Nos ateliers</a></li>
@@ -39,7 +40,7 @@
     </main>
 <!-- balise footer = pied de page du site -->
     <footer class="footer">
-        <img src="./src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie"  class="min">
+        <img src="./src/img/logo_min.png" alt="logo de la boulangerie/pâtisserie" class="min" title="logo maisonb">
         <hr>
         <div>
             <p>Retrouvez nous sur: </p>
